@@ -261,21 +261,6 @@
     background: var(--surface); border: 1px solid var(--border-strong); border-radius: 6px; padding: 5px 7px; outline: none;
   }
   .qty-input:focus { border-color: var(--brand-orange); }
-  .cell-input {
-    width: 100%; min-width: 120px; font-size: 12.5px; font-weight: 500; color: var(--text-primary);
-    background: var(--surface); border: 1px solid var(--border-strong); border-radius: 6px; padding: 5px 7px; outline: none;
-  }
-  .cell-input:focus { border-color: var(--brand-orange); }
-  .dist-matrix-table th, .dist-matrix-table td { text-align: center; }
-  .dist-matrix-table th:first-child, .dist-matrix-table td:first-child { text-align: left; }
-  .dist-matrix-table th { white-space: nowrap; font-size: 11.5px; }
-  .dist-cell { min-width: 40px; padding: 4px !important; transition: background 0.12s ease; }
-  .dist-cell-on { background: var(--status-good-tint); }
-  .dist-cell-off { background: var(--status-critical-tint); }
-  .dist-cell-diag {
-    background: #1c2a44; color: #8fa0c2; font-weight: 700; font-size: 14px;
-  }
-  .dist-checkbox { width: 16px; height: 16px; cursor: pointer; accent-color: var(--status-good); }
   .success-banner {
     display: flex; align-items: center; gap: 10px; background: var(--status-good-tint); color: #0a7d0a;
     font-size: 13px; font-weight: 700; padding: 13px 18px; border-radius: 10px; margin-bottom: 18px;
@@ -472,28 +457,6 @@
         Detailed Plan
       </div>
 
-      <div class="nav-section-label">Parameters</div>
-      <div class="nav-item" data-page="param-inv-target">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v2.5M12 18.5V21M21 12h-2.5M5.5 12H3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        Inventory Target
-      </div>
-      <div class="nav-item" data-page="param-lead-time">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Supplier Lead Time
-      </div>
-      <div class="nav-item" data-page="param-transfer-matrix">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.6"/><path d="M10 6.5h4M10 17.5h4M6.5 10v4M17.5 10v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        Intra Company Transfer Matrix
-      </div>
-      <div class="nav-item" data-page="param-distribution-matrix">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 2 3 6.5 12 11l9-4.5L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 6.5v11L12 22M21 6.5v11L12 22M12 11v11" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        Distribution Matrix
-      </div>
-      <div class="nav-item" data-page="param-device-details">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M9 19h6M12 15v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        Device Details
-      </div>
-
       <div class="nav-section-label">Assist</div>
       <div class="nav-item" data-page="assistant">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 3l1.8 4.6L18 9.2l-4.2 1.7L12 15l-1.8-4.1L6 9.2l4.2-1.6L12 3Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/><path d="M18.5 15l.9 2.2 2.1.8-2.1.8-.9 2.2-.9-2.2-2.1-.8 2.1-.8.9-2.2Z" fill="currentColor"/></svg>
@@ -539,12 +502,6 @@
       <section class="page" id="page-inventory"></section>
       <!-- ============ PAGE: DETAILED PLAN ============ -->
       <section class="page" id="page-plan"></section>
-      <!-- ============ PAGE: PARAMETERS ============ -->
-      <section class="page" id="page-param-inv-target"></section>
-      <section class="page" id="page-param-lead-time"></section>
-      <section class="page" id="page-param-transfer-matrix"></section>
-      <section class="page" id="page-param-distribution-matrix"></section>
-      <section class="page" id="page-param-device-details"></section>
       <!-- ============ PAGE: AI ASSISTANT ============ -->
       <section class="page" id="page-assistant"></section>
 
@@ -1802,12 +1759,7 @@ const PURCHASE_ORDERS = [
   { id: "PO-21132", supplier: "ANIXTER L", vendorItemCode: "TPS500P3", annexItemCode: "1027717-A", product: "310400642 - SPLICE CONNECTOR .500\"", market: "PAN", qty: 100, order: "2026-07-08", eta: "TBC", status: "Open" },
   { id: "PO-21133", supplier: "ANIXTER L", vendorItemCode: "594946-004-00", annexItemCode: "1027803-A", product: "310290286 - 1.2 GHZ 8 PORT 20 DB TAP", market: "PAN", qty: 60, order: "2026-07-08", eta: "TBC", status: "Open" },
   { id: "PO-21134", supplier: "ANIXTER L", vendorItemCode: "DCG-9SB", annexItemCode: "1027683-A", product: "310320533 - 1-PORT DIR COUPLER 9 DB", market: "PAN", qty: 1000, order: "2026-07-09", eta: "TBC", status: "Open" },
-].map(p => ({
-  // Order type wasn't in the source file — assigned deterministically per PO#
-  // (same id always yields the same type) with a realistic ~80/20 split
-  // between new purchases and intra-company stock transfers.
-  ...p, orderType: (hashSeed(p.id) % 100) < 80 ? 'New Purchase' : 'Intra Company Transfer',
-}));
+];
 
 const INVENTORY = [
   { sku: 'CPE-WG6-100', product: 'WiFi 6 Mesh Gateway', category: 'CPE Devices', market: 'PR', onHand: 5200, reorder: 3000, unitCost: 85 },
@@ -1924,321 +1876,18 @@ const fmtDate = s => {
   return isNaN(d) ? s : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 };
 const fmtPct = n => Math.round(n * 100) + '%';
-function escapeXml(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+function escapeXml(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
 
 const BADGE = {
   Fulfilled: ['good', 'Fulfilled'], 'At Risk': ['warning', 'At risk'], Unmet: ['critical', 'Unmet'],
   Pending: ['neutral', 'Pending'], 'In Transit': ['info', 'In transit'], Delivered: ['good', 'Delivered'], Delayed: ['critical', 'Delayed'], Open: ['info', 'Open'],
   OK: ['good', 'OK'], Low: ['warning', 'Low stock'], Critical: ['critical', 'Critical'],
   Balanced: ['good', 'Balanced'], Surplus: ['warning', 'Surplus'], Shortage: ['critical', 'Shortage'],
-  Active: ['good', 'Active'], EOL: ['neutral', 'End of life'],
 };
 function badge(key) {
   const [cls, label] = BADGE[key] || ['neutral', key];
   return `<span class="badge ${cls}"><span class="dot"></span>${label}</span>`;
 }
-
-/* ======================================================================
-   PARAMETERS — reference/config data behind the new Parameters section.
-   None of these five data sets existed in the source files, so each is
-   either a real rollup of data already in the app (Supplier Lead Time, from
-   PURCHASE_ORDERS order/eta gaps) or a deterministic simulation seeded from
-   a stable key (same market/opco/device always reproduces the same
-   figures), matching the same approach used for the Detailed Plan
-   rollforward above.
-   ====================================================================== */
-
-// Inventory Target — real target-stock data (Month Of Stock) uploaded by
-// the user, one row per Opco/Market/Category/Group/CPE combination. Each
-// row gets a stable `id` so the page can edit `monthOfStock` in place
-// without losing track of which row is which as filters change what's
-// currently rendered.
-const INVENTORY_TARGETS = [
-  { opco: 'Caribbean', market: 'Anguilla', category: 'Entertainment', group: 'Legacy Video', cpe: 'EVOLUTION STB DMS1004HDHM', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Anguilla', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Anguilla', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Antigua', category: 'Entertainment', group: 'Legacy Video', cpe: 'EVOLUTION STB DMS1004HDHM', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Bahamas', category: 'Entertainment', group: 'Legacy Video', cpe: 'EVOLUTION STB DMS1004HDHM', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Bahamas', category: 'Extender', group: 'MESH Extender', cpe: 'SERCOMM WIFI MESH EXTENDER RP362', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Bahamas', category: 'Connectivity FTTH', group: 'ONT', cpe: 'GPON EVO6022GP', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Bahamas', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Bahamas', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Barbados', category: 'Entertainment', group: 'Legacy Video', cpe: 'EVOLUTION STB DMS1004HDHM', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Barbados', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Barbados', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'BVI', category: 'Entertainment', group: 'Legacy Video', cpe: 'EVOLUTION STB DMS1004HDHM', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'BVI', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'BVI', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Cayman', category: 'Entertainment', group: 'HUB TV - STB', cpe: 'EVOLUTION STB ESTREAM 4K', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Cayman', category: 'Entertainment', group: 'HUB TV - Stick', cpe: 'EVOLUTION DONGLE FUSE 4K STICK', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Cayman', category: 'Entertainment', group: 'Legacy Video', cpe: 'EVOLUTION STB DMS1004HDHM', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Cayman', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Cayman', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Curacao', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'ARRIS MODEM MERCURY TG2492LG', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Curacao', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'ARRIS MODEM TG2482LG DOCSIS 3.0', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Curacao', category: 'Connectivity HFC', group: 'HFC 3.1', cpe: 'SAGEMCOM MODEM WIFI5 DOCSIS 3.1', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Curacao', category: 'Connectivity HFC', group: 'HFC 3.1', cpe: 'SAGEMCOM MODEM WIFI6 FAST 3896 DOCSIS 3.1', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Curacao', category: 'Entertainment', group: 'HUB TV - STB', cpe: 'EVOLUTION STB ESTREAM 4K', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Curacao', category: 'Entertainment', group: 'HUB TV - Stick', cpe: 'EVOLUTION DONGLE FUSE 4K STICK', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Curacao', category: 'Entertainment', group: 'Legacy Video', cpe: 'EVOLUTION STB DMS1004HDHM', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Curacao', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Curacao', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Curacao', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'SAGEMCOM WIFI 6 FAST 5670 GPON', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Dominica', category: 'Entertainment', group: 'Legacy Video', cpe: 'EVOLUTION STB DMS1004HDHM', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Dominica', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Dominica', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Grenada', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'ARRIS MODEM MERCURY TG2492LG', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Grenada', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'ARRIS MODEM TG2482LG DOCSIS 3.0', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Grenada', category: 'Connectivity HFC', group: 'HFC 3.1', cpe: 'SAGEMCOM MODEM WIFI6 FAST 3896 DOCSIS 3.1', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Grenada', category: 'Entertainment', group: 'HUB TV - STB', cpe: 'EVOLUTION STB ESTREAM 4K', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Grenada', category: 'Entertainment', group: 'HUB TV - Stick', cpe: 'EVOLUTION DONGLE FUSE 4K STICK', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Grenada', category: 'Entertainment', group: 'Legacy Video', cpe: 'EVOLUTION STB DMS1004HDHM', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Grenada', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Grenada', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Jamaica', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'ARRIS MODEM MERCURY TG2492LG', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Jamaica', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'ARRIS MODEM TG2482LG DOCSIS 3.0', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Jamaica', category: 'Connectivity HFC', group: 'HFC 3.1', cpe: 'SAGEMCOM MODEM WIFI5 DOCSIS 3.1', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Jamaica', category: 'Connectivity HFC', group: 'HFC 3.1', cpe: 'SAGEMCOM MODEM WIFI6 FAST 3896 DOCSIS 3.1', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Jamaica', category: 'Entertainment', group: 'HUB TV - STB', cpe: 'EVOLUTION STB ESTREAM 4K', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Jamaica', category: 'Entertainment', group: 'HUB TV - Stick', cpe: 'EVOLUTION DONGLE FUSE 4K STICK', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Jamaica', category: 'Entertainment', group: 'Legacy Video', cpe: 'EVOLUTION STB DMS1004HDHM', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Jamaica', category: 'Extender', group: 'MESH Extender', cpe: 'SAGEMCOM EXTENDER WIFI6 F266', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Jamaica', category: 'Extender', group: 'MESH Extender', cpe: 'SERCOMM WIFI MESH EXTENDER RP362', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Jamaica', category: 'Connectivity FTTH', group: 'ONT', cpe: 'GPON EVO6022GP', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Jamaica', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Jamaica', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Jamaica', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'SAGEMCOM WIFI 6 FAST 5670 GPON', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Montserrat', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Montserrat', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Kitts', category: 'Entertainment', group: 'Legacy Video', cpe: 'EVOLUTION STB DMS1004HDHM', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Kitts', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Kitts', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Lucia', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'ARRIS MODEM MERCURY TG2492LG', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Lucia', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'ARRIS MODEM TG2482LG DOCSIS 3.0', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Lucia', category: 'Connectivity HFC', group: 'HFC 3.1', cpe: 'SAGEMCOM MODEM WIFI6 FAST 3896 DOCSIS 3.1', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Lucia', category: 'Entertainment', group: 'HUB TV - STB', cpe: 'EVOLUTION STB ESTREAM 4K', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Lucia', category: 'Entertainment', group: 'HUB TV - Stick', cpe: 'EVOLUTION DONGLE FUSE 4K STICK', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Lucia', category: 'Entertainment', group: 'Legacy Video', cpe: 'EVOLUTION STB DMS1004HDHM', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Lucia', category: 'Extender', group: 'MESH Extender', cpe: 'SAGEMCOM EXTENDER WIFI6 F266', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Vincent', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'ARRIS MODEM TG2482LG DOCSIS 3.0', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Vincent', category: 'Connectivity HFC', group: 'HFC 3.1', cpe: 'SAGEMCOM MODEM WIFI6 FAST 3896 DOCSIS 3.1', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Vincent', category: 'Entertainment', group: 'HUB TV - STB', cpe: 'EVOLUTION STB ESTREAM 4K', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Vincent', category: 'Entertainment', group: 'HUB TV - Stick', cpe: 'EVOLUTION DONGLE FUSE 4K STICK', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Vincent', category: 'Entertainment', group: 'Legacy Video', cpe: 'EVOLUTION STB DMS1004HDHM', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Vincent', category: 'Connectivity FTTH', group: 'ONT', cpe: 'GPON EVO6022GP', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Vincent', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'St Vincent', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'TCI', category: 'Entertainment', group: 'Legacy Video', cpe: 'EVOLUTION STB DMS1004HDHM', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'TCI', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'TCI', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Trinidad', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'ARRIS MODEM MERCURY TG2492LG', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Trinidad', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'ARRIS MODEM TG2482LG DOCSIS 3.0', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Trinidad', category: 'Connectivity HFC', group: 'HFC 3.1', cpe: 'SAGEMCOM MODEM WIFI6 FAST 3896 DOCSIS 3.1', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Trinidad', category: 'Entertainment', group: 'HUB TV - STB', cpe: 'EVOLUTION STB ESTREAM 4K', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Trinidad', category: 'Entertainment', group: 'HUB TV - Stick', cpe: 'EVOLUTION DONGLE FUSE 4K STICK', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Trinidad', category: 'Entertainment', group: 'Legacy Video', cpe: 'EVOLUTION STB DMS1004HDHM', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Trinidad', category: 'Extender', group: 'MESH Extender', cpe: 'SAGEMCOM EXTENDER WIFI6 F266', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Trinidad', category: 'Extender', group: 'MESH Extender', cpe: 'SERCOMM WIFI MESH EXTENDER RP324', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Trinidad', category: 'Connectivity FTTH', group: 'ONT', cpe: 'GPON EVO6022GP', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Trinidad', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Caribbean', market: 'Trinidad', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Costa Rica', market: 'Costa Rica', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'ARRIS MODEM TG2482LG DOCSIS 3.0', monthOfStock: 2 },
-  { opco: 'Costa Rica', market: 'Costa Rica', category: 'Connectivity HFC', group: 'HFC 3.1', cpe: 'SAGEMCOM MODEM WIFI6 FAST 3896 DOCSIS 3.1', monthOfStock: 2 },
-  { opco: 'Costa Rica', market: 'Costa Rica', category: 'Entertainment', group: 'HUB TV - STB', cpe: 'EVOLUTION STB ESTREAM 4K', monthOfStock: 2 },
-  { opco: 'Costa Rica', market: 'Costa Rica', category: 'Entertainment', group: 'HUB TV - Stick', cpe: 'EVOLUTION DONGLE FUSE 4K STICK', monthOfStock: 2 },
-  { opco: 'Costa Rica', market: 'Costa Rica', category: 'Entertainment', group: 'Legacy Video', cpe: 'CRENOVA STB CRC 700', monthOfStock: 2 },
-  { opco: 'Costa Rica', market: 'Costa Rica', category: 'Extender', group: 'MESH Extender', cpe: 'SAGEMCOM EXTENDER WIFI6 F266', monthOfStock: 2 },
-  { opco: 'Costa Rica', market: 'Costa Rica', category: 'Extender', group: 'MESH Extender', cpe: 'SERCOMM WIFI MESH EXTENDER RP362', monthOfStock: 2 },
-  { opco: 'Costa Rica', market: 'Costa Rica', category: 'Connectivity FTTH', group: 'ONT', cpe: 'GPON EVO6022GP', monthOfStock: 2 },
-  { opco: 'Costa Rica', market: 'Costa Rica', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Costa Rica', market: 'Costa Rica', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'SAGEMCOM WIFI 6 FAST 5670 GPON', monthOfStock: 2 },
-  { opco: 'Costa Rica', market: 'Costa Rica', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'SERCOMM IP3442 HOME GATEWAY + ASSIA', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'ARRIS MODEM MERCURY TG2492LG', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'ARRIS MODEM TG2482LG DOCSIS 3.0', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Connectivity HFC', group: 'HFC 3.1', cpe: 'SAGEMCOM MODEM WIFI6 FAST 3896 DOCSIS 3.1', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Entertainment', group: 'HUB TV - STB', cpe: 'EVOLUTION STB ESTREAM 4K', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Entertainment', group: 'HUB TV - Stick', cpe: 'APPLE TV 128K', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Entertainment', group: 'HUB TV - Stick', cpe: 'APPLE TV 64K', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Entertainment', group: 'HUB TV - Stick', cpe: 'EVOLUTION DONGLE FUSE 4K STICK', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Entertainment', group: 'HUB TV - Stick', cpe: 'GOOGLE CHROME', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Connectivity Dongle', group: 'Legacy Connectivity', cpe: 'INSEEGO DONGLE LTE', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Entertainment', group: 'Legacy Video', cpe: 'ARRIS DCX3520 DVR TV DIGITAL BOX', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Entertainment', group: 'Legacy Video', cpe: 'ARRIS DCX525 HD TV DIGITAL BOX', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Extender', group: 'MESH Extender', cpe: 'MODEM PLUME SUPERPOD WIFI5', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Extender', group: 'MESH Extender', cpe: 'SAGEMCOM EXTENDER WIFI6 F266', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Connectivity Dongle', group: 'MESH Extender', cpe: 'TCL Dongle', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Connectivity FTTH', group: 'ONT', cpe: 'ADTRAN 424RG WIRELESS RESIDENTIAL GATEWAY', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Connectivity FTTH', group: 'ONT', cpe: 'GPON EVO6022GP', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'SAGEMCOM WIFI 6 FAST 5670 GPON', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'Puerto Rico', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'SERCOMM IP3442 HOME GATEWAY + ASSIA', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'USVI', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'FWA', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'USVI', category: 'Extender', group: 'MESH Extender', cpe: 'MODEM PLUME SUPERPOD WIFI5', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'USVI', category: 'Connectivity FTTH', group: 'ONT', cpe: 'GPON EVO6022GP', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'USVI', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Puerto Rico', market: 'USVI', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'ADTRAN GATEWAY 834 V6', monthOfStock: 2 },
-  { opco: 'Panama', market: 'Panama', category: 'Fixed Voice', group: 'Fixe Voice', cpe: 'FIXED HANDSETS', monthOfStock: 2 },
-  { opco: 'Panama', market: 'Panama', category: 'Connectivity HFC', group: 'HFC 3.0', cpe: 'ARRIS MODEM TG2482LG DOCSIS 3.0', monthOfStock: 2 },
-  { opco: 'Panama', market: 'Panama', category: 'Connectivity HFC', group: 'HFC 3.1', cpe: 'SAGEMCOM MODEM WIFI6 FAST 3896 DOCSIS 3.1', monthOfStock: 2 },
-  { opco: 'Panama', market: 'Panama', category: 'Entertainment', group: 'HUB TV - STB', cpe: 'EVOLUTION STB ESTREAM 4K', monthOfStock: 2 },
-  { opco: 'Panama', market: 'Panama', category: 'Entertainment', group: 'HUB TV - Stick', cpe: 'EVOLUTION DONGLE FUSE 4K STICK', monthOfStock: 2 },
-  { opco: 'Panama', market: 'Panama', category: 'Extender', group: 'MESH Extender', cpe: 'SAGEMCOM EXTENDER WIFI6 F266', monthOfStock: 2 },
-  { opco: 'Panama', market: 'Panama', category: 'Extender', group: 'MESH Extender', cpe: 'SERCOMM WIFI MESH EXTENDER RP324', monthOfStock: 2 },
-  { opco: 'Panama', market: 'Panama', category: 'Connectivity Dongle', group: 'MESH Extender', cpe: 'USB DONGLE LTE IK41UD1', monthOfStock: 2 },
-  { opco: 'Panama', market: 'Panama', category: 'Connectivity FTTH', group: 'ONT', cpe: 'GPON EVO6022GP', monthOfStock: 2 },
-  { opco: 'Panama', market: 'Panama', category: 'Connectivity FTTH', group: 'ONT', cpe: 'SERCOMM BASIC ONT GF1100R', monthOfStock: 2 },
-  { opco: 'Panama', market: 'Panama', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'SAGEMCOM WIFI 6 FAST 5670 GPON', monthOfStock: 2 },
-  { opco: 'Panama', market: 'Panama', category: 'Connectivity FTTH', group: 'ONT Gateway', cpe: 'SERCOMM IP3442 HOME GATEWAY + ASSIA', monthOfStock: 2 },
-].map((r, i) => ({ id: i, ...r }));
-
-// Supplier Lead Time — real fulfilment-window data uploaded by the user,
-// one row per Market/Vendor/Item combination. Every field is editable in
-// place and new rows can be added, so this stays a plain mutable array
-// (each row gets a stable `id`) rather than a derived/computed value.
-const SUPPLIER_LEAD_TIMES = [
-  { market: 'Barbados', vendor: 'MIAMI TRAD', vendorItemCode: 'DW500540017SRTL', annexItemCode: '304814-A', description: 'EVO FORCE PRO STB WITH GOOGLE', deviceName: 'EVO FORCE PRO STB WITH GOOGLE', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Barbados', vendor: 'MIAMI TRAD', vendorItemCode: 'FG1100R-L/US', annexItemCode: '1038592-A', description: 'FG1100R-L/US (BASIC ONT)', deviceName: '120030025 - SERCOMM - BASIC ONT GF1100R', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Jamaica', vendor: 'EVOLUTION', vendorItemCode: 'IPA3102HDW01.2', annexItemCode: '302129CAR-AIR-A', description: 'FUSE4K KIT W/1.8M TYPE A EPS', deviceName: '130060120 - EVOLUTION DONGLE FUSE 4K STICK', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Jamaica', vendor: 'ANIXTER L', vendorItemCode: 'IK41UC', annexItemCode: '304830-A', description: 'TCL DONGLE IK41UC BLACK', deviceName: 'TCL DONGLE IK41UC BLACK', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Jamaica', vendor: 'MIAMI TRAD', vendorItemCode: '254080874', annexItemCode: '302311-WAR', description: 'AX5400 DUAL BAND WI-FI 6 MESH', deviceName: '140040149 - SAGEMCOM EXTENDER WIFI6 F266', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Jamaica', vendor: 'EVOLUTION', vendorItemCode: 'IPA3102HDW01.2', annexItemCode: '302129CAR-A', description: 'FUSE4K KIT W/1.8M TYPE A EPS', deviceName: '130060120 - EVOLUTION DONGLE FUSE 4K STICK', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Jamaica', vendor: 'ANIXTER L', vendorItemCode: 'PWR-CC1-150WAC', annexItemCode: 'IO-54609044-03', description: 'LA C8200 1RU AC 150W POE PWR', deviceName: 'NO GALILEO DATA BASE', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Jamaica', vendor: 'ANIXTER L', vendorItemCode: '403330', annexItemCode: 'IO-54606895-30', description: 'AVAYA SPACES BUSINESS TERM SUB', deviceName: 'NO GALILEO DATA BASE', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Miami', vendor: 'CAMBIUM NE', vendorItemCode: 'C050045C002D', annexItemCode: '520589-PR', description: 'INTEGRATED HIGH ANTENNA', deviceName: '110040148 - ANTENNA 450B MIDGAIN OR HIGHGAIN BRAIN FWA', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Miami', vendor: 'GDI TECHNO', vendorItemCode: 'GDPS-C112-2A-UL', annexItemCode: '2602008-PR', description: 'POWER PACK 12V 2AMP', deviceName: '310881420 - POWER PACK 12V 2AMP', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Miami', vendor: 'GDI TECHNO', vendorItemCode: 'GDPSC112D2.5AUL', annexItemCode: '2602026-PR', description: 'POWER SUPPLY 12V 2.5A', deviceName: '310381672 - POWER SUPPLY 12V 2.5A TG2492', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Miami', vendor: 'UNIV REMOT', vendorItemCode: 'UR5U-9020L-L1', annexItemCode: '2602004-PR', description: 'REMOTE CONTROL UR5U-9020L-LI', deviceName: '110010128 - REMOTE CONTROL UR5U-9020L-LI', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Miami', vendor: 'VANTIVA', vendorItemCode: 'AREP05760', annexItemCode: '301315-PR', description: 'POWER SUPPLY 12V 2A WALL TYPE', deviceName: '310382785 - POWER SUPPLY 12V 2A WALL TYPE', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Miami', vendor: 'INGRAM MIC', vendorItemCode: 'TSS', annexItemCode: '106804-A', description: 'CISCO LA - SERVICES', deviceName: 'NO GALILEO DATA BASE', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Miami', vendor: 'AMPHENOL N', vendorItemCode: '009-8005-0810', annexItemCode: '910231', description: 'DUAL FEED 350A, 8/10 TPA/GMT', deviceName: 'NO GALILEO DATA BASE', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Miami', vendor: 'AVAYA INC', vendorItemCode: '404444', annexItemCode: 'IO-57717755-02', description: 'TELEPHONY USERS', deviceName: 'NO GALILEO DATA BASE', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Miami', vendor: 'AVAYA INC', vendorItemCode: '', annexItemCode: 'IO-57717768-05', description: 'ASBCE LICENSE FIXED SUBS ADJ L', deviceName: 'NO GALILEO DATA BASE', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Miami FTZ', vendor: 'TM CELL IN', vendorItemCode: 'IK41UD1', annexItemCode: '302029-A', description: 'ALCATEL DONGLE IK41UD1', deviceName: '110060152 - ALCATEL DONGLE IK41UD1', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Miami FTZ', vendor: 'TM CELL IN', vendorItemCode: 'IK41UC', annexItemCode: '304830-A', description: 'TCL DONGLE IK41UC BLACK', deviceName: 'TCL DONGLE IK41UC BLACK', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Miami FTZ', vendor: 'TM CELL IN', vendorItemCode: 'IK41UD1', annexItemCode: '302029-WAR', description: 'ALCATEL DONGLE IK41UD1', deviceName: '110060152 - ALCATEL DONGLE IK41UD1', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Miami FTZ', vendor: 'TM CELL IN', vendorItemCode: 'IK41UC', annexItemCode: '304830-WAR', description: 'TCL DONGLE IK41UC BLACK', deviceName: 'TCL DONGLE IK41UC BLACK', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'PANAMA FTZ', vendor: 'CBL-WIRELS', vendorItemCode: 'FAST5670', annexItemCode: '302310-C', description: 'GPON MULTIMEDIA WIFI 6 HOME', deviceName: '120030125 - SAGEMCOM GW WiFi 6 FAST 5670', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'PANAMA FTZ', vendor: 'EVOL DIGIT', vendorItemCode: 'EVO6022GP3', annexItemCode: '302401-A', description: 'WIFI 6 DUALBAND 2X2 INTEGRATED', deviceName: '120030153 - GPON EVO6022GP', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'PANAMA FTZ', vendor: 'EVOL DIGIT', vendorItemCode: '2703120062231E', annexItemCode: '302330-A', description: 'FUSE4K HDMI ADAPTER, 23CM', deviceName: '310382987 - FUSE4K HDMI ADAPTER, 23CM', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'PANAMA FTZ', vendor: 'EVOL DIGIT', vendorItemCode: '24051AB4B1033E', annexItemCode: '302331-A', description: 'FUSE4K TYPE A, 1.8M, 5V, 1AEPS', deviceName: '310382988 - FUSE4K TYPE A, 1.8M, 5V, 1AEPS', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'PANAMA FTZ', vendor: 'EVOLUTION', vendorItemCode: 'EVO6022GP3', annexItemCode: '302401-A', description: 'WIFI 6 DUALBAND 2X2 INTEGRATED', deviceName: '120030153 - GPON EVO6022GP', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'PANAMA FTZ', vendor: 'EVOLUTION', vendorItemCode: 'DW500540017SRTL', annexItemCode: '304814-A', description: 'EVO FORCE PRO STB WITH GOOGLE', deviceName: 'EVO FORCE PRO STB WITH GOOGLE', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'PANAMA FTZ', vendor: 'UNIV ELECT', vendorItemCode: 'R37023BC0000005', annexItemCode: '1030111-AA', description: 'REMOTE TIVO LITE CREEK W/', deviceName: '310382418 - REMOTE TIVO CREEK EVOLUTION', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'PANAMA FTZ', vendor: 'EVOLUTION', vendorItemCode: 'IPA3102HDW01247', annexItemCode: '302129-PR', description: 'FUSE4K KIT W/1.8M TYPE A EPS', deviceName: '130060120 - EVOLUTION DONGLE FUSE 4K STICK', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'PANAMA FTZ', vendor: 'SAGEMCOM B', vendorItemCode: '254020472', annexItemCode: '302131-A', description: 'MODEM DOCSIS 3.1 WIFI6', deviceName: '120040142 - SAGEMCOM MODEM WIFI6 DOCSIS 3.1', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'PANAMA FTZ', vendor: 'SAGEMCOM B', vendorItemCode: '254020472', annexItemCode: '302131-WAR', description: 'MODEM DOCSIS 3.1WIFI6 FAST3896', deviceName: '120040142 - SAGEMCOM MODEM WIFI6 DOCSIS 3.1', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'PANAMA EXP', vendorItemCode: '2703120062231E', annexItemCode: '302330-A', description: 'FUSE4K HDMI ADAPTER, 23CM', deviceName: '310382987 - FUSE4K HDMI ADAPTER, 23CM', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'PANAMA EXP', vendorItemCode: '24051AB4B1033E', annexItemCode: '302331-A', description: 'FUSE4K TYPE A, 1.8M, 5V, 1AEPS', deviceName: '310382988 - FUSE4K TYPE A, 1.8M, 5V, 1AEPS', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'EVOLUTION', vendorItemCode: 'IPA3102HDW01.2', annexItemCode: '302129CAR-AIR-A', description: 'FUSE4K KIT W/1.8M TYPE A EPS', deviceName: '130060120 - EVOLUTION DONGLE FUSE 4K STICK', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'PANAMA EXP', vendorItemCode: '254020472', annexItemCode: '302167-PR', description: 'SAGEMCOM 3.1 MODEM WIFI 6 FAST 3896', deviceName: '120040142 - SAGEMCOM MODEM WIFI6 DOCSIS 3.1', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'PANAMA EXP', vendorItemCode: '254020472', annexItemCode: '302167-WAR', description: 'MODEM DOCSIS 3.1WIFI6 FAST3896', deviceName: '120040142 - SAGEMCOM MODEM WIFI6 DOCSIS 3.1', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'DEFANG TEC', vendorItemCode: 'DFCAT505-BK', annexItemCode: '998512-PR', description: 'PATCH CORD CAT5E BLACK 5FT', deviceName: '110010139 - PATCH CORD CAT5E Black', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'ANIXTER L', vendorItemCode: 'UR5U-9020L-L1', annexItemCode: '2602004-PR', description: 'REMOTE CONTROL UR5U-9020L-LI', deviceName: '110010128 - REMOTE CONTROL UR5U-9020L-LI', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'ANIXTER L', vendorItemCode: 'GDPS-C112-2A-UL', annexItemCode: '2602008-PR', description: 'POWER PACK 12V 2AMP', deviceName: '310881420 - POWER PACK 12V 2AMP', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'MIAMI TRAD', vendorItemCode: 'DW500540017SRTL', annexItemCode: '10601186-A', description: 'EVO FORCE PRO STB WITH GOOGLE', deviceName: 'EVO FORCE PRO STB WITH GOOGLE', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'ANIXTER L', vendorItemCode: 'GDPSC112D2.5AUL', annexItemCode: '2602026-PR', description: 'POWER SUPPLY 12V 2.5A', deviceName: '310381672 - POWER SUPPLY 12V 2.5A TG2492', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'DEFANG TEC', vendorItemCode: 'DFCAT505-WH', annexItemCode: '301289-PR', description: 'PATCH CORD CAT5E WHITE 5FT', deviceName: '311171804 - PATCHCORD 5FT CAT5E WHITE', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'ANIXTER L', vendorItemCode: 'TSS', annexItemCode: '106804-A', description: 'CISCO LA - SERVICES', deviceName: 'NO GALILEO DATA BASE', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'ANIXTER L', vendorItemCode: 'AREP05760', annexItemCode: '301315-PR', description: 'POWER SUPPLY 12V 2A WALL TYPE', deviceName: '310382785 - POWER SUPPLY 12V 2A WALL TYPE', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'EVOL DIGIT', vendorItemCode: '2703120062231E', annexItemCode: '302330-A', description: 'FUSE4K HDMI ADAPTER, 23CM', deviceName: '310382987 - FUSE4K HDMI ADAPTER, 23CM', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'EVOL DIGIT', vendorItemCode: '24051AB4B1033E', annexItemCode: '302331-A', description: 'FUSE4K TYPE A, 1.8M, 5V, 1AEPS', deviceName: '310382988 - FUSE4K TYPE A, 1.8M, 5V, 1AEPS', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'UNIV ELECT', vendorItemCode: 'R37023BC0000005', annexItemCode: '301370-PR', description: 'REMOTE TIVO LITE CREEK W/', deviceName: '310382418 - REMOTE TIVO CREEK EVOLUTION', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Puerto Rico', vendor: 'PANAMA EXP', vendorItemCode: 'EVO6022GP3', annexItemCode: '302401-AIR-A', description: 'WI-FI 6 DUAL-BAND 2X2', deviceName: '120030153 - GPON EVO6022GP', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Trinidad', vendor: 'EVOLUTION', vendorItemCode: 'IPA3102HDW01.2', annexItemCode: '302129CAR-AIR-A', description: 'FUSE4K KIT W/1.8M TYPE A EPS', deviceName: '130060120 - EVOLUTION DONGLE FUSE 4K STICK', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Trinidad', vendor: 'PANAMA EXP', vendorItemCode: '17600023F1', annexItemCode: '301844-A', description: 'MODEM 834-V6 17600023F1', deviceName: '120030143 - ADTRAN GATEWAY 834 V6', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Trinidad', vendor: 'PANAMA EXP', vendorItemCode: 'FG1100R-L/US', annexItemCode: '1038592-A', description: 'FG1100R-L/US (BASIC ONT)', deviceName: '120030025 - SERCOMM - BASIC ONT GF1100R', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Trinidad', vendor: 'MIAMI TRAD', vendorItemCode: 'FG1100R-L/US', annexItemCode: '1038592-A', description: 'FG1100R-L/US (BASIC ONT)', deviceName: '120030025 - SERCOMM - BASIC ONT GF1100R', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Trinidad', vendor: 'MIAMI TRAD', vendorItemCode: '254080874', annexItemCode: '302311-WAR', description: 'AX5400 DUAL BAND WI-FI 6 MESH', deviceName: '140040149 - SAGEMCOM EXTENDER WIFI6 F266', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Trinidad', vendor: 'EVOLUTION', vendorItemCode: 'IPA3102HDW01.2', annexItemCode: '302129CAR-A', description: 'FUSE4K KIT W/1.8M TYPE A EPS', deviceName: '130060120 - EVOLUTION DONGLE FUSE 4K STICK', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Trinidad', vendor: 'PANAMA EXP', vendorItemCode: 'IPA3102HDW01247', annexItemCode: '302129-PR', description: 'FUSE4K KIT W/1.8M TYPE A EPS', deviceName: '130060120 - EVOLUTION DONGLE FUSE 4K STICK', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Costa Rica', vendor: 'PANAMA EXP', vendorItemCode: '2703120062231E', annexItemCode: '302330-A', description: 'FUSE4K HDMI ADAPTER, 23CM', deviceName: '310382987 - FUSE4K HDMI ADAPTER, 23CM', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Costa Rica', vendor: 'PANAMA EXP', vendorItemCode: '24051AB4B1033E', annexItemCode: '302331-A', description: 'FUSE4K TYPE A, 1.8M, 5V, 1AEPS', deviceName: '310382988 - FUSE4K TYPE A, 1.8M, 5V, 1AEPS', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Costa Rica', vendor: 'PANAMA EXP', vendorItemCode: 'R37023BC0000005', annexItemCode: '1030111-AA', description: 'REMOTE TIVO LITE CREEK W/', deviceName: '310382418 - REMOTE TIVO CREEK EVOLUTION', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Costa Rica', vendor: 'EVOLUTION', vendorItemCode: 'IPA3102HDW01.24', annexItemCode: '518513CR-AA', description: 'FUSE4K KIT TYPE A EPS SERIAL', deviceName: '130060120 - EVOLUTION DONGLE FUSE 4K STICK', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Costa Rica', vendor: 'ANIXTER L', vendorItemCode: 'TSS', annexItemCode: '106804-A', description: 'CISCO LA - SERVICES', deviceName: 'NO GALILEO DATA BASE', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Costa Rica', vendor: 'EVOLUTION', vendorItemCode: 'IPA1114HDW01.24', annexItemCode: '229328CR-A', description: 'ESTREAM4K,2X2 WIFI,ANDROID STB', deviceName: '130060062 - EVOLUTION STB ESTREAM 4K', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Costa Rica', vendor: 'ANIXTER L', vendorItemCode: '254020472', annexItemCode: '302131CR-A', description: 'MODEM DOCSIS 3.1 WIFI6', deviceName: '120040142 - SAGEMCOM MODEM WIFI6 DOCSIS 3.1', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Costa Rica', vendor: 'ANIXTER L', vendorItemCode: '254020472', annexItemCode: '302131CR-WAR', description: 'MODEM DOCSIS 3.1WIFI6 FAST3896', deviceName: '120040142 - SAGEMCOM MODEM WIFI6 DOCSIS 3.1', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Panama', vendor: 'EVOL DIGIT', vendorItemCode: '6022GP3PM87A121', annexItemCode: '302401PA-A', description: 'WI-FI 6 DUAL-BAND 2X2', deviceName: '120030153 - GPON EVO6022GP', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Panama', vendor: 'EVOL DIGIT', vendorItemCode: 'IPA3102HDW01.2', annexItemCode: '302129-AA', description: 'FUSE4K KIT W/1.8M TYPE A EPS', deviceName: '130060120 - EVOLUTION DONGLE FUSE 4K STICK', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Panama', vendor: 'EVOL DIGIT', vendorItemCode: '2703120062231E', annexItemCode: '302330-AA', description: 'FUSE4K HDMI ADAPTER, 23CM', deviceName: '310382987 - FUSE4K HDMI ADAPTER, 23CM', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Panama', vendor: 'EVOL DIGIT', vendorItemCode: '24051AB4B1033E', annexItemCode: '302331-AA', description: 'FUSE4K TYPE A, 1.8M, 5V, 1AEPS', deviceName: '310382988 - FUSE4K TYPE A, 1.8M, 5V, 1AEPS', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Panama', vendor: 'ANIXTER L', vendorItemCode: 'TSS', annexItemCode: '106804-A', description: 'CISCO LA - SERVICES', deviceName: 'NO GALILEO DATA BASE', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Panama', vendor: 'UNIV ELECT', vendorItemCode: 'R37023BC0000005', annexItemCode: '1030111PA-AA', description: 'REMOTE TIVO LITE CREEK W/', deviceName: '310382418 - REMOTE TIVO CREEK EVOLUTION', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Panama', vendor: 'SAGEMCOM B', vendorItemCode: '254020472', annexItemCode: '302131-AA', description: 'MODEM DOCSIS 3.1 WIFI6', deviceName: '120040142 - SAGEMCOM MODEM WIFI6 DOCSIS 3.1', deviceType: 'CPE', fulfilmentDays: 150 },
-  { market: 'Panama', vendor: 'SAGEMCOM B', vendorItemCode: '254020472', annexItemCode: '302131-WAR', description: 'MODEM DOCSIS 3.1WIFI6 FAST3896', deviceName: '120040142 - SAGEMCOM MODEM WIFI6 DOCSIS 3.1', deviceType: 'CPE', fulfilmentDays: 150 },
-].map((r, i) => ({ id: i, ...r }));
-let supplierLeadTimeNextId = SUPPLIER_LEAD_TIMES.length;
-
-// Intra Company Transfer Matrix — lead time (and flat transfer cost) for
-// moving stock between Opcos. Diagonal (an Opco transferring to itself) is
-// not a lane.
-const TRANSFER_MATRIX = OPCOS.map(from => ({
-  from,
-  lanes: OPCOS.map(to => {
-    if (to === from) return { to, self: true };
-    const rng = mulberry32(hashSeed(`transfer|${from}|${to}`));
-    return { to, leadDays: Math.round(3 + rng() * 12), cost: Math.round(150 + rng() * 850) };
-  }),
-}));
-
-// Distribution Matrix — Origin x Destiny lane-approval grid. Rows/columns are
-// the same 18-entity list (OEM, the Anixter distribution points including the
-// two FTZ hubs, and the LLA Opco markets). A checked cell means stock is
-// allowed to move from that row entity to that column entity; the diagonal
-// (an entity to itself) is not applicable and rendered as a fixed "-" cell.
-// Every non-diagonal cell is independently toggle-able and persisted in
-// DISTRIBUTION_LANES, keyed by "origin||destiny" so it survives re-renders.
-const ORIGIN_DESTINY_ENTITIES = [
-  'OEM',
-  'Anixter Panama', 'Anixter Costa Rica', 'Anixter Puerto Rico', 'Anixter USVI',
-  'Anixter Jamaica', 'Anixter Trinidad', 'Anixter Barbados',
-  'Anixter Miami FTZ (HUB)', 'Anixter Panama FTZ (HUB)',
-  'LLA Panama', 'LLA Costa Rica', 'LLA Puerto Rico', 'LLA USVI',
-  'LLA Jamaica', 'LLA Trinidad', 'LLA Barbados', 'LLA LC Markets',
-];
-function distLaneKey(origin, destiny) { return `${origin}||${destiny}`; }
-const DISTRIBUTION_LANES = {};
-ORIGIN_DESTINY_ENTITIES.forEach(origin => {
-  const isHubOrigin = origin === 'OEM' || origin.startsWith('Anixter');
-  ORIGIN_DESTINY_ENTITIES.forEach(destiny => {
-    if (origin === destiny) return;
-    const rng = mulberry32(hashSeed(`dist-lane|${origin}|${destiny}`));
-    const isFtzHubOrigin = origin.includes('FTZ');
-    const destIsLla = destiny.startsWith('LLA');
-    let odds;
-    if (origin === 'OEM') odds = destiny.startsWith('Anixter') ? 0.85 : 0.15;
-    else if (isFtzHubOrigin) odds = destIsLla ? 0.55 : 0.4;
-    else if (isHubOrigin) odds = destIsLla && destiny.replace('LLA ', '') === origin.replace('Anixter ', '') ? 0.9 : 0.2;
-    else odds = destIsLla ? 0.25 : 0.1;
-    DISTRIBUTION_LANES[distLaneKey(origin, destiny)] = rng() < odds;
-  });
-});
-
-// Device Details — a master list combining the two device catalogs already
-// used elsewhere (the 10-device market-mix catalog and the 20-device
-// Detailed Plan picklist, which don't overlap). Category/group/cost are
-// pulled from existing DEMAND/INVENTORY rows where a device already has
-// one, so figures stay consistent with what's shown on those pages; the
-// rest is a deterministic simulation seeded from the device name.
-const PRODUCT_META = {};
-DEMAND.forEach(d => { PRODUCT_META[d.product] = { ...(PRODUCT_META[d.product] || {}), category: d.category, group: d.group }; });
-INVENTORY.forEach(i => { PRODUCT_META[i.product] = { ...(PRODUCT_META[i.product] || {}), category: i.category, unitCost: i.unitCost }; });
-const DEVICE_MASTER = [
-  ...DEVICE_CATALOG.map(d => ({ sku: d.sku, name: d.name })),
-  ...ROLLFORWARD_DEVICES.map(name => ({ sku: null, name })),
-].map(d => {
-  const rng = mulberry32(hashSeed(`device|${d.name}`));
-  const known = PRODUCT_META[d.name] || {};
-  const category = known.category || CATEGORIES[Math.floor(rng() * CATEGORIES.length)];
-  const group = known.group || GROUPS[Math.floor(rng() * GROUPS.length)];
-  const categoryBase = { 'CPE Devices': 75, 'Set-Top Boxes': 90, 'Networking': 950, 'Fiber & Cable': 180 }[category] || 100;
-  const unitCost = known.unitCost !== undefined ? known.unitCost : Math.round(categoryBase * (0.5 + rng() * 1.2));
-  const lifecycle = rng() < 0.82 ? 'Active' : 'EOL';
-  const sku = d.sku || `DEV-${10000 + Math.floor(rng() * 89999)}`;
-  return { sku, name: d.name, category, group, unitCost, lifecycle };
-}).sort((a, b) => a.name.localeCompare(b.name));
 
 /* ======================================================================
    TOOLTIP (shared across all charts)
@@ -2492,26 +2141,6 @@ function mulberry32(seed) {
 }
 const ROLLFORWARD_MONTHS = [...MONTH_LABELS.map(m => m + ' ’26'), ...MONTH_LABELS.map(m => m + ' ’27')];
 
-// Shared actual/forecast/projection phase coding for any Jan'26–Dec'27
-// monthly table (Demand, Detailed Plan rollforward). Months before TODAY's
-// month are "actual" (already happened), the rest of 2026 is "forecast",
-// and all of 2027 is "projection" — driven off the app's pinned TODAY so
-// the split stays consistent everywhere it's used.
-const CURRENT_MONTH_IDX = TODAY.getMonth();
-const PHASE_BY_COL_24 = Array.from({ length: 24 }, (_, i) =>
-  i >= 12 ? 'projection' : (i < CURRENT_MONTH_IDX ? 'actual' : 'forecast'));
-const PHASE_TD = {
-  actual:     'background:var(--status-neutral-tint);color:var(--text-secondary);',
-  forecast:   'background:var(--status-info-tint);color:var(--status-info);',
-  projection: 'background:var(--brand-orange-tint);color:var(--brand-orange-700);',
-};
-const ACTUAL_RANGE_LABEL = CURRENT_MONTH_IDX > 0 ? `${MONTH_LABELS[0]}–${MONTH_LABELS[CURRENT_MONTH_IDX - 1]} '26` : null;
-const FORECAST_RANGE_LABEL = `${MONTH_LABELS[CURRENT_MONTH_IDX]}–${MONTH_LABELS[11]} '26`;
-const PHASE_LEGEND_HTML = `
-  ${ACTUAL_RANGE_LABEL ? `<span class="legend-item"><span class="legend-swatch" style="background:var(--status-neutral-tint);border:1px solid var(--border-strong);"></span>Actual (${ACTUAL_RANGE_LABEL})</span>` : ''}
-  <span class="legend-item"><span class="legend-swatch" style="background:var(--status-info-tint);border:1px solid var(--border-strong);"></span>Forecast (${FORECAST_RANGE_LABEL})</span>
-  <span class="legend-item"><span class="legend-swatch" style="background:var(--brand-orange-tint);border:1px solid var(--border-strong);"></span>Projection ('27)</span>`;
-
 function buildRollforward(opco, market, device) {
   const rng = mulberry32(hashSeed(`${opco}|${market}|${device}`));
   const baseInstall = Math.round(120 + rng() * 380);
@@ -2628,12 +2257,11 @@ function rollforwardTableHtml(R) {
     return `<tr>
       <td style="${labelStyle}white-space:normal;min-width:220px;">${row.label}</td>
       <td class="cell-sub" style="${defStyle}white-space:normal;min-width:170px;">${row.def || ''}</td>
-      ${values.map((v, i) => `<td class="num" style="${labelStyle}${PHASE_TD[PHASE_BY_COL_24[i]]}">${fmtRF(v, row.fmt)}</td>`).join('')}
+      ${values.map(v => `<td class="num" style="${labelStyle}">${fmtRF(v, row.fmt)}</td>`).join('')}
     </tr>`;
   }).join('');
 
   return `
-    <div class="plan-legend" style="border-top:none;padding:0 0 12px;">${PHASE_LEGEND_HTML}</div>
     <div class="table-scroll"><table>
       <thead>
         <tr><th></th><th></th><th colspan="12" style="text-align:center;">2026</th><th colspan="12" style="text-align:center;">2027</th></tr>
@@ -2641,26 +2269,6 @@ function rollforwardTableHtml(R) {
       </thead>
       <tbody>${bodyRows}</tbody>
     </table></div>`;
-}
-
-/* ======================================================================
-   CSV EXPORT
-   ====================================================================== */
-function csvCell(v) {
-  const s = v === null || v === undefined ? '' : String(v);
-  return /[",\r\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
-}
-function downloadCsv(filename, header, rows) {
-  const lines = [header, ...rows].map(r => r.map(csvCell).join(',')).join('\r\n');
-  const blob = new Blob(['﻿' + lines], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
 }
 
 /* ======================================================================
@@ -2848,6 +2456,7 @@ function buildDemandPage() {
   const totalForecast = DEMAND.reduce((s, d) => s + d.forecast, 0);
   const totalCommitted = DEMAND.reduce((s, d) => s + d.committed, 0);
   const fulfillment = totalCommitted / totalForecast;
+  const unmet = DEMAND.filter(d => d.status === 'Unmet').length;
 
   const byMarket = stockPositionByMarket();
   const deviceNames = [...new Set(DEMAND.map(d => d.product))].sort();
@@ -2864,8 +2473,8 @@ function buildDemandPage() {
     <div class="grid kpi-grid">
       ${kpiCard('Forecasted demand', fmtNum(totalForecast) + ' units', 'Q3 2026, all markets')}
       ${kpiCard('Fulfillment rate', fmtPct(fulfillment), 'committed vs. forecast', delta(Math.round(fulfillment * 100) - 90, fulfillment >= 0.9))}
-      ${kpiCard('Unmet demand lines', 'Undefined')}
-      ${kpiCard('Opcos covered', 'Undefined')}
+      ${kpiCard('Unmet demand lines', unmet, 'below 80% fulfillment')}
+      ${kpiCard('Opcos covered', OPCOS.length, MARKETS.length + ' markets in the Liberty Latam footprint')}
     </div>
 
     <div class="card" style="margin-bottom:18px;">
@@ -2884,12 +2493,7 @@ function buildDemandPage() {
     <div class="card table-card">
       <div class="card-head" style="padding:16px 20px 0;">
         <div class="card-sub">Full Jan–Dec breakdown for 2026 and 2027 — scroll right for later months.</div>
-        <button class="btn btn-ghost" id="demand-export-csv" style="padding:7px 12px;font-size:12px;">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 3v13m0 0l-4.5-4.5M12 16l4.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 18v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          Export CSV
-        </button>
       </div>
-      <div class="plan-legend" style="border-top:none;padding-top:0;">${PHASE_LEGEND_HTML}</div>
       <div class="table-scroll"><table>
         <thead><tr>
           <th>Opco</th><th>Market</th><th>Category</th><th>Group</th><th>CPE</th><th>Galileo code</th>
@@ -2914,21 +2518,17 @@ function buildDemandPage() {
     { name: 'Total inventory', color: C.s1 }, { name: 'Demand', color: C.s2 }, { name: 'Excess stock', color: C.s3 },
   ]));
 
-  function getFilteredDemandRows() {
+  function renderRows() {
     const opcoSel = document.getElementById('demand-filter-opco').value;
     const marketSel = document.getElementById('demand-filter-market').value;
     const catSel = document.getElementById('demand-filter-category').value;
     const deviceQuery = document.getElementById('demand-filter-device').value.trim().toLowerCase();
-    return DEMAND.filter(d =>
+    const rows = DEMAND.filter(d =>
       (!opcoSel || marketOpco(d.market) === opcoSel) &&
       (!marketSel || marketName(d.market) === marketSel) &&
       (!catSel || d.category === catSel) &&
       (!deviceQuery || d.product.toLowerCase().includes(deviceQuery) || d.galileoCode.toLowerCase().includes(deviceQuery))
     );
-  }
-
-  function renderRows() {
-    const rows = getFilteredDemandRows();
     const tbody = document.getElementById('demand-tbody');
     const colCount = 6 + 13 + 13;
     if (!rows.length) {
@@ -2945,10 +2545,10 @@ function buildDemandPage() {
         <td class="cell-muted">${d.group}</td>
         <td class="cell-strong" style="white-space:normal;max-width:170px;">${d.product}</td>
         <td class="cell-muted">${d.galileoCode}</td>
-        ${m.y2026.map((v, i) => `<td class="num" style="${PHASE_TD[PHASE_BY_COL_24[i]]}">${fmtNum(v)}</td>`).join('')}
-        <td class="num cell-strong" style="${PHASE_TD.forecast}">${fmtNum(m.total2026)}</td>
-        ${m.y2027.map(v => `<td class="num" style="${PHASE_TD.projection}">${fmtNum(v)}</td>`).join('')}
-        <td class="num cell-strong" style="${PHASE_TD.projection}">${fmtNum(m.total2027)}</td>
+        ${m.y2026.map(v => `<td class="num">${fmtNum(v)}</td>`).join('')}
+        <td class="num cell-strong">${fmtNum(m.total2026)}</td>
+        ${m.y2027.map(v => `<td class="num" style="color:var(--brand-orange-700);">${fmtNum(v)}</td>`).join('')}
+        <td class="num cell-strong" style="color:var(--brand-orange-700);">${fmtNum(m.total2027)}</td>
       </tr>`;
     }).join('');
   }
@@ -2960,23 +2560,6 @@ function buildDemandPage() {
   document.getElementById('btn-new-demand').addEventListener('click', () => {
     buildNewDemandPage();
     navigateTo('new-demand');
-  });
-
-  document.getElementById('demand-export-csv').addEventListener('click', () => {
-    const rows = getFilteredDemandRows();
-    const header = [
-      'Opco', 'Market', 'Category', 'Group', 'CPE', 'Galileo code',
-      ...MONTH_LABELS.map(m => `${m} '26`), "Total '26",
-      ...MONTH_LABELS.map(m => `${m} '27`), "Total '27",
-    ];
-    const csvRows = rows.map(d => {
-      const m = monthlySeriesFor(d);
-      return [
-        marketOpco(d.market), marketName(d.market), d.category, d.group, d.product, d.galileoCode,
-        ...m.y2026, m.total2026, ...m.y2027, m.total2027,
-      ];
-    });
-    downloadCsv('demand-forecast.csv', header, csvRows);
   });
 }
 
@@ -2999,10 +2582,8 @@ function generateDemandQty(opco, market, category, group, device) {
   return [...y2026, ...y2027];
 }
 function nowAbsMonth() {
-  // Uses the app's pinned TODAY (2026-08-12), same as the PO Gantt "today"
-  // marker, so the locked/editable month split reads consistently
-  // regardless of when this file is actually opened.
-  return TODAY.getFullYear() * 12 + TODAY.getMonth();
+  const d = new Date();
+  return d.getFullYear() * 12 + d.getMonth();
 }
 function buildNewDemandPage() {
   document.getElementById('page-new-demand').innerHTML = `
@@ -3117,14 +2698,11 @@ function buildPOPage() {
       <select id="po-filter-opco">${optionsHtml(OPCOS, 'All Opcos')}</select>
       <select id="po-filter-market">${optionsHtml(MARKETS.map(m => m.name), 'All markets')}</select>
       <select id="po-filter-supplier">${optionsHtml([...new Set(PURCHASE_ORDERS.map(p => p.supplier))].sort(), 'All vendors')}</select>
-      <input type="text" class="text-input" id="po-filter-device" list="po-device-list" placeholder="All devices — type to search" autocomplete="off" style="min-width:230px;" />
-      <datalist id="po-device-list">${[...new Set(PURCHASE_ORDERS.map(p => p.product))].sort().map(n => `<option value="${escapeXml(n)}">`).join('')}</datalist>
-      <select id="po-filter-order-type">${optionsHtml(['New Purchase', 'Intra Company Transfer'], 'All order types')}</select>
     </div>
 
     <div id="po-view-table" class="card table-card">
       <div class="table-scroll"><table>
-        <thead><tr><th>PO #</th><th>Opco</th><th>Market</th><th>Vendor</th><th>Vendor item code</th><th>Annex item code</th><th>Device name</th><th class="num">Quantity</th><th>Order date</th><th>Due date</th><th>Status</th><th>Order type</th></tr></thead>
+        <thead><tr><th>PO #</th><th>Opco</th><th>Market</th><th>Vendor</th><th>Vendor item code</th><th>Annex item code</th><th>Device name</th><th class="num">Quantity</th><th>Order date</th><th>Due date</th><th>Status</th></tr></thead>
         <tbody id="po-tbody"></tbody>
       </table></div>
     </div>
@@ -3138,7 +2716,6 @@ function buildPOPage() {
       <div class="plan-legend">
         <span class="legend-item"><span class="legend-swatch" style="background:${C.info};"></span>Open</span>
         <span class="legend-item"><span class="legend-swatch" style="background:${C.neutral};"></span>Due date TBC</span>
-        <span class="legend-item"><span class="legend-swatch" style="background:transparent;border-left:3px dashed ${C.neutral};"></span>Ordered before chart window (hover for real date)</span>
       </div>
     </div>
   `;
@@ -3147,14 +2724,10 @@ function buildPOPage() {
     const opcoSel = document.getElementById('po-filter-opco').value;
     const marketSel = document.getElementById('po-filter-market').value;
     const supplierSel = document.getElementById('po-filter-supplier').value;
-    const deviceQuery = document.getElementById('po-filter-device').value.trim().toLowerCase();
-    const orderTypeSel = document.getElementById('po-filter-order-type').value;
     return PURCHASE_ORDERS.filter(p =>
       (!opcoSel || marketOpco(p.market) === opcoSel) &&
       (!marketSel || marketName(p.market) === marketSel) &&
-      (!supplierSel || p.supplier === supplierSel) &&
-      (!deviceQuery || p.product.toLowerCase().includes(deviceQuery)) &&
-      (!orderTypeSel || p.orderType === orderTypeSel)
+      (!supplierSel || p.supplier === supplierSel)
     );
   }
 
@@ -3162,7 +2735,7 @@ function buildPOPage() {
     const rows = getFilteredPOs();
     const tbody = document.getElementById('po-tbody');
     if (!rows.length) {
-      tbody.innerHTML = `<tr><td colspan="12" style="text-align:center;color:var(--text-muted);padding:26px;">No purchase orders match these filters.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="11" style="text-align:center;color:var(--text-muted);padding:26px;">No purchase orders match these filters.</td></tr>`;
       return;
     }
     tbody.innerHTML = rows.map(p => `
@@ -3178,7 +2751,6 @@ function buildPOPage() {
         <td class="cell-muted">${fmtDate(p.order)}</td>
         <td>${fmtDate(p.eta)}</td>
         <td>${badge(p.status)}</td>
-        <td class="cell-muted">${p.orderType}</td>
       </tr>`).join('');
   }
   function renderGantt() {
@@ -3190,30 +2762,17 @@ function buildPOPage() {
       return;
     }
 
-    // The source data spans a wide, uneven range (a handful of order dates
-    // go back to 2023 while the vast majority of activity — and every known
-    // due date — sits in 2026–2027; ~15% of due dates are marked "TBC"
-    // instead of a real date). Anchoring the window to the true min/max
-    // let a few outlier orders blow the range out to 2023, squeezing the
-    // real 2026–2027 activity into a sliver on the right. Instead, the
-    // window starts no earlier than a fixed lead-time buffer before the
-    // earliest known due date — far-earlier orders still appear (their
-    // bars are clipped to the window's left edge with a hatch pattern and
-    // their real order date stays visible on hover) but no longer dictate
-    // the axis.
-    const LEAD_BUFFER_DAYS = 150;
-    const orderMs = rows.map(p => new Date(p.order).getTime());
-    const knownEtaMs = rows.map(p => new Date(p.eta)).filter(d => !isNaN(d)).map(d => d.getTime());
+    // The source data spans a wide, uneven range (multi-year order dates,
+    // ~15% of due dates marked "TBC" instead of a real date) — so the window
+    // is derived from whatever's currently filtered rather than fixed, and
+    // the tick unit adapts to how wide that window ends up being.
     const knownDates = [];
     rows.forEach(p => {
       knownDates.push(new Date(p.order));
       const d = new Date(p.eta);
       if (!isNaN(d)) knownDates.push(d);
     });
-    const trueMinOrder = Math.min(...orderMs);
-    const earliestKnownEta = knownEtaMs.length ? Math.min(...knownEtaMs) : trueMinOrder;
-    const windowFloor = Math.max(trueMinOrder, earliestKnownEta - LEAD_BUFFER_DAYS * 86400000);
-    let start = new Date(windowFloor - 3 * 86400000);
+    let start = new Date(Math.min(...knownDates) - 3 * 86400000);
     let end = new Date(Math.max(...knownDates) + 3 * 86400000);
     if (end - start < 14 * 86400000) end = new Date(start.getTime() + 14 * 86400000);
     const totalDays = (end - start) / 86400000;
@@ -3243,8 +2802,6 @@ function buildPOPage() {
       const rightPct = dueKnown ? dayPct(p.eta) : 100;
       const widthPct = Math.max(2, rightPct - leftPct);
       const barBg = dueKnown ? C.info : `repeating-linear-gradient(135deg, ${C.info}, ${C.info} 6px, ${C.neutral} 6px, ${C.neutral} 12px)`;
-      const clippedStart = new Date(p.order).getTime() < start.getTime();
-      const clipBorder = clippedStart ? `border-left:4px dashed ${C.neutral};` : '';
       return `
       <div class="gantt-row">
         <div class="gantt-row-label">
@@ -3254,7 +2811,7 @@ function buildPOPage() {
         <div class="gantt-track">
           ${gridLinesHtml}
           <div class="gantt-today${idx === 0 ? '' : ' no-label'}" style="left:${todayPct}%;"></div>
-          <div class="gantt-bar" data-po="${p.id}" style="left:${leftPct}%;width:${widthPct}%;background:${barBg};${clipBorder}" title="${clippedStart ? 'Ordered ' + fmtDate(p.order) + ' — before the chart window' : ''}">${dueKnown ? 'Open' : 'Due TBC'}</div>
+          <div class="gantt-bar" data-po="${p.id}" style="left:${leftPct}%;width:${widthPct}%;background:${barBg};">${dueKnown ? 'Open' : 'Due TBC'}</div>
         </div>
       </div>`;
     }).join('');
@@ -3275,16 +2832,14 @@ function buildPOPage() {
           { label: 'Order date', value: fmtDate(p.order), color: statusColor() },
           { label: 'Due date', value: fmtDate(p.eta), color: statusColor() },
           { label: 'Qty', value: fmtNum(p.qty), color: statusColor() },
-          { label: 'Order type', value: p.orderType, color: statusColor() },
         ]);
       });
       bar.addEventListener('mouseleave', hideTooltip);
     });
   }
 
-  ['po-filter-opco', 'po-filter-market', 'po-filter-supplier', 'po-filter-order-type'].forEach(id =>
+  ['po-filter-opco', 'po-filter-market', 'po-filter-supplier'].forEach(id =>
     document.getElementById(id).addEventListener('change', () => { renderRows(); renderGantt(); }));
-  document.getElementById('po-filter-device').addEventListener('input', () => { renderRows(); renderGantt(); });
   document.querySelectorAll('#po-view-toggle button').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('#po-view-toggle button').forEach(b => b.classList.remove('active'));
@@ -3319,11 +2874,8 @@ function buildInventoryPage() {
 
     <div class="card" style="margin-bottom:18px;">
       <div class="card-head">
-        <div><div class="card-title">Quantity by market</div><div class="card-sub" id="inv-market-chart-sub">All countries, all devices &mdash; units, by market</div></div>
-        <div style="display:flex;gap:8px;">
-          <select id="inv-chart-country">${optionsHtml(OPCOS, 'All countries')}</select>
-          <select id="inv-chart-device">${optionsHtml(DEVICE_CATALOG.map(d => d.name), 'All devices')}</select>
-        </div>
+        <div><div class="card-title">Quantity by market</div><div class="card-sub" id="inv-market-chart-sub">All devices &mdash; units, by market</div></div>
+        <select id="inv-chart-device">${optionsHtml(DEVICE_CATALOG.map(d => d.name), 'All devices')}</select>
       </div>
       <div class="chart-wrap" id="chart-inventory-market"></div>
     </div>
@@ -3348,18 +2900,11 @@ function buildInventoryPage() {
   const chartMarketLabel = c => c === 'PANFTZ' ? 'FTZ' : c;
 
   function renderMarketQtyChart() {
-    const countrySel = document.getElementById('inv-chart-country').value;
     const deviceName = document.getElementById('inv-chart-device').value;
     const device = DEVICE_CATALOG.find(d => d.name === deviceName);
     const qtyByCode = device ? marketQtyByDevice(device.sku) : MARKET_QTY;
-    const codes = Object.keys(MARKET_QTY).filter(c => !countrySel || marketOpco(c) === countrySel);
-    document.getElementById('inv-market-chart-sub').textContent =
-      (countrySel || 'All countries') + ', ' + (deviceName || 'all devices') + ' — units, by market';
-    if (!codes.length) {
-      document.getElementById('chart-inventory-market').innerHTML =
-        '<div style="text-align:center;color:var(--text-muted);padding:40px 0;">No market-level data for this country yet.</div>';
-      return;
-    }
+    const codes = Object.keys(MARKET_QTY);
+    document.getElementById('inv-market-chart-sub').textContent = (deviceName || 'All devices') + ' — units, by market';
     renderBarChart(document.getElementById('chart-inventory-market'), {
       labels: codes.map(chartMarketLabel),
       tooltipTitles: codes.map(marketName),
@@ -3370,7 +2915,6 @@ function buildInventoryPage() {
     });
   }
   renderMarketQtyChart();
-  document.getElementById('inv-chart-country').addEventListener('change', renderMarketQtyChart);
   document.getElementById('inv-chart-device').addEventListener('change', renderMarketQtyChart);
 
   function renderRows() {
@@ -3626,453 +3170,6 @@ function chatAppendAssistant(resp) {
   messages.scrollTop = messages.scrollHeight;
 }
 
-/* ======================================================================
-   PAGE: PARAMETERS — five reference/config pages (Inventory Target,
-   Supplier Lead Time, Intra Company Transfer Matrix, Distribution Matrix,
-   Device Details). Data sources are documented next to the arrays above.
-   ====================================================================== */
-function buildInventoryTargetPage() {
-  const itMarkets = [...new Set(INVENTORY_TARGETS.map(t => t.market))].sort();
-  const itCategories = [...new Set(INVENTORY_TARGETS.map(t => t.category))].sort();
-  const itGroups = [...new Set(INVENTORY_TARGETS.map(t => t.group))].sort();
-  const dirty = new Set(); // ids with an unsaved edit
-
-  document.getElementById('page-param-inv-target').innerHTML = `
-    <div class="page-head">
-      <div><h2>Inventory target</h2><p class="desc">Target Month of Stock by Opco, market, category, group, and device. Edit the Month of Stock column and save your changes.</p></div>
-      <button class="btn btn-primary" id="it-save" disabled>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 4h11l3 3v13H5V4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 4v5h8V4M8 14h8v6H8v-6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
-        Save changes
-      </button>
-    </div>
-
-    <div id="it-success" class="success-banner" style="display:none;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#0a7d0a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Changes saved.
-    </div>
-
-    <div class="filter-row">
-      <select id="it-filter-opco">${optionsHtml(OPCOS, 'All Opcos')}</select>
-      <select id="it-filter-market">${optionsHtml(itMarkets, 'All markets')}</select>
-      <select id="it-filter-category">${optionsHtml(itCategories, 'All categories')}</select>
-      <select id="it-filter-group">${optionsHtml(itGroups, 'All groups')}</select>
-      <input type="text" class="text-input" id="it-filter-device" placeholder="Search device…" autocomplete="off" style="min-width:220px;" />
-    </div>
-
-    <div class="card table-card">
-      <div class="card-sub" style="padding:14px 20px 0;">${fmtNum(INVENTORY_TARGETS.length)} target lines — uploaded data, Month of Stock is editable.</div>
-      <div class="table-scroll"><table>
-        <thead><tr><th>Opco</th><th>Market</th><th>Category</th><th>Group</th><th>CPE</th><th class="num">Month of stock</th></tr></thead>
-        <tbody id="it-tbody"></tbody>
-      </table></div>
-    </div>
-  `;
-
-  const saveBtn = document.getElementById('it-save');
-  const successEl = document.getElementById('it-success');
-  let successTimer = null;
-
-  function setSaveEnabled() {
-    saveBtn.disabled = dirty.size === 0;
-  }
-
-  function getFilteredRows() {
-    const opcoSel = document.getElementById('it-filter-opco').value;
-    const marketSel = document.getElementById('it-filter-market').value;
-    const catSel = document.getElementById('it-filter-category').value;
-    const groupSel = document.getElementById('it-filter-group').value;
-    const deviceQuery = document.getElementById('it-filter-device').value.trim().toLowerCase();
-    return INVENTORY_TARGETS.filter(t =>
-      (!opcoSel || t.opco === opcoSel) &&
-      (!marketSel || t.market === marketSel) &&
-      (!catSel || t.category === catSel) &&
-      (!groupSel || t.group === groupSel) &&
-      (!deviceQuery || t.cpe.toLowerCase().includes(deviceQuery))
-    );
-  }
-
-  function render() {
-    const rows = getFilteredRows();
-    const tbody = document.getElementById('it-tbody');
-    if (!rows.length) {
-      tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:26px;">No rows match these filters.</td></tr>`;
-      return;
-    }
-    tbody.innerHTML = rows.map(t => `
-      <tr data-id="${t.id}">
-        <td class="cell-strong">${escapeXml(t.opco)}</td>
-        <td>${escapeXml(t.market)}</td>
-        <td>${escapeXml(t.category)}</td>
-        <td class="cell-muted">${escapeXml(t.group)}</td>
-        <td style="white-space:normal;max-width:280px;">${escapeXml(t.cpe)}</td>
-        <td class="num"><input type="number" min="0" class="qty-input" data-id="${t.id}" value="${t.monthOfStock}" /></td>
-      </tr>`).join('');
-
-    tbody.querySelectorAll('.qty-input').forEach(input => {
-      input.addEventListener('input', () => {
-        const id = Number(input.dataset.id);
-        const row = INVENTORY_TARGETS.find(t => t.id === id);
-        const val = Number(input.value);
-        row.monthOfStock = isNaN(val) ? 0 : val;
-        dirty.add(id);
-        successEl.style.display = 'none';
-        setSaveEnabled();
-      });
-    });
-  }
-
-  ['it-filter-opco', 'it-filter-market', 'it-filter-category', 'it-filter-group'].forEach(id =>
-    document.getElementById(id).addEventListener('change', render));
-  document.getElementById('it-filter-device').addEventListener('input', render);
-
-  saveBtn.addEventListener('click', () => {
-    // Nothing to persist to server-side in this prototype — edits already
-    // live on INVENTORY_TARGETS as they're typed; "saving" just confirms
-    // the commit and clears the dirty/unsaved-changes state.
-    dirty.clear();
-    setSaveEnabled();
-    successEl.style.display = 'flex';
-    clearTimeout(successTimer);
-    successTimer = setTimeout(() => { successEl.style.display = 'none'; }, 3000);
-  });
-
-  render();
-}
-
-function buildSupplierLeadTimePage() {
-  const dirty = new Set(); // ids with an unsaved edit/add/remove
-
-  document.getElementById('page-param-lead-time').innerHTML = `
-    <div class="page-head">
-      <div><h2>Supplier lead time</h2><p class="desc">Fulfilment window by market, vendor, and item — every field is editable, and new records can be added.</p></div>
-      <div style="display:flex;gap:10px;">
-        <button class="btn btn-ghost" id="lt-add-record">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          Add record
-        </button>
-        <button class="btn btn-primary" id="lt-save" disabled>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 4h11l3 3v13H5V4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 4v5h8V4M8 14h8v6H8v-6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
-          Save changes
-        </button>
-      </div>
-    </div>
-
-    <div id="lt-success" class="success-banner" style="display:none;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#0a7d0a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Changes saved.
-    </div>
-
-    <div class="grid kpi-grid" style="grid-template-columns:repeat(3, 1fr);">
-      <div class="card kpi-card">
-        <div class="kpi-label">Records</div>
-        <div class="kpi-value" id="kpi-lt-total">–</div>
-        <div class="kpi-foot"><span class="kpi-note">market / vendor / item rows</span></div>
-      </div>
-      <div class="card kpi-card">
-        <div class="kpi-label">Vendors</div>
-        <div class="kpi-value" id="kpi-lt-vendors">–</div>
-        <div class="kpi-foot"><span class="kpi-note">distinct suppliers</span></div>
-      </div>
-      <div class="card kpi-card">
-        <div class="kpi-label">Avg fulfilment window</div>
-        <div class="kpi-value" id="kpi-lt-avg">–</div>
-        <div class="kpi-foot"><span class="kpi-note">days, across all records</span></div>
-      </div>
-    </div>
-
-    <div class="filter-row">
-      <select id="lt-filter-market"></select>
-      <select id="lt-filter-vendor"></select>
-      <select id="lt-filter-type"></select>
-      <input type="text" class="text-input" id="lt-filter-search" placeholder="Search item / description…" autocomplete="off" style="min-width:220px;" />
-    </div>
-
-    <div class="card table-card">
-      <div class="table-scroll"><table>
-        <thead><tr>
-          <th>Market</th><th>Vendor</th><th>Vendor item code</th><th>Annex item code</th>
-          <th>Material description</th><th>Device name</th><th>Device type</th>
-          <th class="num">Fulfilment window (days)</th><th></th>
-        </tr></thead>
-        <tbody id="lt-tbody"></tbody>
-      </table></div>
-    </div>
-  `;
-
-  const saveBtn = document.getElementById('lt-save');
-  const successEl = document.getElementById('lt-success');
-  let successTimer = null;
-
-  function setSaveEnabled() { saveBtn.disabled = dirty.size === 0; }
-
-  function refreshFilterOptions() {
-    const fields = [
-      ['lt-filter-market', 'market', 'All markets'],
-      ['lt-filter-vendor', 'vendor', 'All vendors'],
-      ['lt-filter-type', 'deviceType', 'All device types'],
-    ];
-    fields.forEach(([id, key, allLabel]) => {
-      const sel = document.getElementById(id);
-      const current = sel.value;
-      const values = [...new Set(SUPPLIER_LEAD_TIMES.map(r => r[key]).filter(Boolean))].sort();
-      sel.innerHTML = optionsHtml(values, allLabel);
-      if (values.includes(current)) sel.value = current;
-    });
-  }
-
-  function refreshKpis() {
-    const vendors = new Set(SUPPLIER_LEAD_TIMES.map(r => r.vendor).filter(Boolean));
-    const withWindow = SUPPLIER_LEAD_TIMES.filter(r => typeof r.fulfilmentDays === 'number' && !isNaN(r.fulfilmentDays));
-    const avg = withWindow.length ? Math.round(withWindow.reduce((s, r) => s + r.fulfilmentDays, 0) / withWindow.length) : 0;
-    document.getElementById('kpi-lt-total').textContent = fmtNum(SUPPLIER_LEAD_TIMES.length);
-    document.getElementById('kpi-lt-vendors').textContent = fmtNum(vendors.size);
-    document.getElementById('kpi-lt-avg').textContent = avg + ' days';
-  }
-
-  function getFilteredRows() {
-    const marketSel = document.getElementById('lt-filter-market').value;
-    const vendorSel = document.getElementById('lt-filter-vendor').value;
-    const typeSel = document.getElementById('lt-filter-type').value;
-    const q = document.getElementById('lt-filter-search').value.trim().toLowerCase();
-    return SUPPLIER_LEAD_TIMES.filter(r =>
-      (!marketSel || r.market === marketSel) &&
-      (!vendorSel || r.vendor === vendorSel) &&
-      (!typeSel || r.deviceType === typeSel) &&
-      (!q || [r.description, r.deviceName, r.vendorItemCode, r.annexItemCode].some(v => (v || '').toLowerCase().includes(q)))
-    );
-  }
-
-  function fieldInput(id, field, value, opts) {
-    const numeric = opts && opts.numeric;
-    return `<input type="${numeric ? 'number' : 'text'}" ${numeric ? 'min="0"' : ''} class="${numeric ? 'qty-input' : 'cell-input'}" data-id="${id}" data-field="${field}" value="${escapeXml(value)}" />`;
-  }
-
-  function render() {
-    refreshFilterOptions();
-    refreshKpis();
-    const rows = getFilteredRows();
-    const tbody = document.getElementById('lt-tbody');
-    if (!rows.length) {
-      tbody.innerHTML = `<tr><td colspan="9" style="text-align:center;color:var(--text-muted);padding:26px;">No records match these filters.</td></tr>`;
-      return;
-    }
-    tbody.innerHTML = rows.map(r => `
-      <tr data-id="${r.id}">
-        <td>${fieldInput(r.id, 'market', r.market)}</td>
-        <td>${fieldInput(r.id, 'vendor', r.vendor)}</td>
-        <td>${fieldInput(r.id, 'vendorItemCode', r.vendorItemCode)}</td>
-        <td>${fieldInput(r.id, 'annexItemCode', r.annexItemCode)}</td>
-        <td>${fieldInput(r.id, 'description', r.description)}</td>
-        <td>${fieldInput(r.id, 'deviceName', r.deviceName)}</td>
-        <td>${fieldInput(r.id, 'deviceType', r.deviceType)}</td>
-        <td class="num">${fieldInput(r.id, 'fulfilmentDays', r.fulfilmentDays, { numeric: true })}</td>
-        <td><button class="btn btn-ghost lt-remove" data-id="${r.id}" disabled title="Disabled in this prototype" style="padding:5px 10px;font-size:11px;white-space:nowrap;">Remove</button></td>
-      </tr>`).join('');
-
-    tbody.querySelectorAll('input[data-field]').forEach(input => {
-      input.addEventListener('input', () => {
-        const id = Number(input.dataset.id);
-        const field = input.dataset.field;
-        const row = SUPPLIER_LEAD_TIMES.find(x => x.id === id);
-        row[field] = field === 'fulfilmentDays' ? (Number(input.value) || 0) : input.value;
-        dirty.add(id);
-        successEl.style.display = 'none';
-        setSaveEnabled();
-        // Refresh filter dropdown options / KPI tiles on every keystroke
-        // (not just on blur/"change") so new values and updated averages
-        // show up immediately — cheap at this table's size, and this only
-        // touches the dropdowns/KPI tiles, never the table body, so it
-        // never steals focus from the field being typed in.
-        if (field === 'market' || field === 'vendor' || field === 'deviceType') refreshFilterOptions();
-        if (field === 'vendor' || field === 'fulfilmentDays') refreshKpis();
-      });
-    });
-
-    tbody.querySelectorAll('.lt-remove').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = Number(btn.dataset.id);
-        const idx = SUPPLIER_LEAD_TIMES.findIndex(x => x.id === id);
-        if (idx !== -1) SUPPLIER_LEAD_TIMES.splice(idx, 1);
-        dirty.add(id);
-        setSaveEnabled();
-        successEl.style.display = 'none';
-        render();
-      });
-    });
-  }
-
-  ['lt-filter-market', 'lt-filter-vendor', 'lt-filter-type'].forEach(id =>
-    document.getElementById(id).addEventListener('change', render));
-  document.getElementById('lt-filter-search').addEventListener('input', render);
-
-  document.getElementById('lt-add-record').addEventListener('click', () => {
-    const newRow = {
-      id: supplierLeadTimeNextId++, market: '', vendor: '', vendorItemCode: '', annexItemCode: '',
-      description: '', deviceName: '', deviceType: '', fulfilmentDays: 0,
-    };
-    SUPPLIER_LEAD_TIMES.unshift(newRow);
-    dirty.add(newRow.id);
-    setSaveEnabled();
-    successEl.style.display = 'none';
-    ['lt-filter-market', 'lt-filter-vendor', 'lt-filter-type'].forEach(id => { document.getElementById(id).value = ''; });
-    document.getElementById('lt-filter-search').value = '';
-    render();
-    const firstInput = document.querySelector(`#lt-tbody tr[data-id="${newRow.id}"] input`);
-    if (firstInput) firstInput.focus();
-  });
-
-  saveBtn.addEventListener('click', () => {
-    // No server in this prototype — edits/adds/removes already live on
-    // SUPPLIER_LEAD_TIMES as they happen; "saving" confirms the commit and
-    // clears the unsaved-changes state.
-    dirty.clear();
-    setSaveEnabled();
-    successEl.style.display = 'flex';
-    clearTimeout(successTimer);
-    successTimer = setTimeout(() => { successEl.style.display = 'none'; }, 3000);
-  });
-
-  render();
-}
-
-function buildTransferMatrixPage() {
-  document.getElementById('page-param-transfer-matrix').innerHTML = `
-    <div class="page-head">
-      <div><h2>Intra company transfer matrix</h2><p class="desc">Lead time and flat transfer cost for moving stock between Opcos.</p></div>
-    </div>
-    <div class="card table-card">
-      <div class="table-scroll"><table>
-        <thead><tr><th>From \\ To</th>${OPCOS.map(o => `<th class="num">${o}</th>`).join('')}</tr></thead>
-        <tbody>
-          ${TRANSFER_MATRIX.map(row => `
-            <tr>
-              <td class="cell-strong">${row.from}</td>
-              ${row.lanes.map(l => l.self
-                ? `<td class="num cell-muted">—</td>`
-                : `<td class="num"><div class="cell-strong">${l.leadDays}d</div><div class="cell-sub">$${fmtNum(l.cost)}</div></td>`
-              ).join('')}
-            </tr>`).join('')}
-        </tbody>
-      </table></div>
-    </div>
-    <div class="plan-legend">
-      <span class="legend-item">Each cell: lead time (days) and flat transfer cost per shipment, from row Opco to column Opco</span>
-    </div>
-  `;
-}
-
-function buildDistributionMatrixPage() {
-  document.getElementById('page-param-distribution-matrix').innerHTML = `
-    <div class="page-head">
-      <div><h2>Distribution matrix</h2><p class="desc">Approved lanes from each origin (row) to each destiny (column). Check a cell to allow that lane — checked lanes are marked green, unchecked lanes are marked red.</p></div>
-      <div style="display:flex;align-items:center;gap:10px;">
-        <div class="success-banner" id="dm-success" style="display:none;">Distribution matrix saved.</div>
-        <button class="btn btn-primary" id="dm-save" disabled>Save changes</button>
-      </div>
-    </div>
-    <div class="plan-legend">
-      <span class="legend-item"><span class="legend-swatch" style="background:var(--status-good-tint);border:1px solid var(--status-good);"></span>Lane allowed</span>
-      <span class="legend-item"><span class="legend-swatch" style="background:var(--status-critical-tint);border:1px solid var(--status-critical);"></span>Lane not allowed</span>
-      <span class="legend-item"><span class="legend-swatch" style="background:#1c2a44;border:1px solid #1c2a44;"></span>Origin = Destiny (n/a)</span>
-    </div>
-    <div class="card table-card">
-      <div class="table-scroll"><table class="dist-matrix-table">
-        <thead><tr><th>Origin \\ Destiny</th>${ORIGIN_DESTINY_ENTITIES.map(e => `<th>${escapeXml(e)}</th>`).join('')}</tr></thead>
-        <tbody id="dm-tbody"></tbody>
-      </table></div>
-    </div>
-  `;
-  const dirty = new Set();
-  const saveBtn = document.getElementById('dm-save');
-  const successEl = document.getElementById('dm-success');
-  let successTimer;
-  function setSaveEnabled() { saveBtn.disabled = dirty.size === 0; }
-  function render() {
-    const tbody = document.getElementById('dm-tbody');
-    tbody.innerHTML = ORIGIN_DESTINY_ENTITIES.map(origin => `
-      <tr>
-        <td class="cell-strong" style="white-space:nowrap;">${escapeXml(origin)}</td>
-        ${ORIGIN_DESTINY_ENTITIES.map(destiny => {
-          if (origin === destiny) return `<td class="dist-cell dist-cell-diag">&ndash;</td>`;
-          const key = distLaneKey(origin, destiny);
-          const allowed = !!DISTRIBUTION_LANES[key];
-          return `<td class="dist-cell ${allowed ? 'dist-cell-on' : 'dist-cell-off'}">
-            <input type="checkbox" class="dist-checkbox" data-origin="${escapeXml(origin)}" data-destiny="${escapeXml(destiny)}" ${allowed ? 'checked' : ''} />
-          </td>`;
-        }).join('')}
-      </tr>`).join('');
-    tbody.querySelectorAll('.dist-checkbox').forEach(cb => {
-      cb.addEventListener('change', () => {
-        const key = distLaneKey(cb.dataset.origin, cb.dataset.destiny);
-        DISTRIBUTION_LANES[key] = cb.checked;
-        const td = cb.closest('td');
-        td.classList.toggle('dist-cell-on', cb.checked);
-        td.classList.toggle('dist-cell-off', !cb.checked);
-        dirty.add(key);
-        successEl.style.display = 'none';
-        setSaveEnabled();
-      });
-    });
-  }
-  saveBtn.addEventListener('click', () => {
-    dirty.clear();
-    setSaveEnabled();
-    successEl.style.display = 'flex';
-    clearTimeout(successTimer);
-    successTimer = setTimeout(() => { successEl.style.display = 'none'; }, 3000);
-  });
-  render();
-}
-
-function buildDeviceDetailsPage() {
-  document.getElementById('page-param-device-details').innerHTML = `
-    <div class="page-head">
-      <div><h2>Device details</h2><p class="desc">Master device catalog — category, group, unit cost, and lifecycle status.</p></div>
-    </div>
-    <div class="filter-row">
-      <select id="dd-filter-category">${optionsHtml(CATEGORIES, 'All categories')}</select>
-      <select id="dd-filter-group">${optionsHtml(GROUPS, 'All groups')}</select>
-      <select id="dd-filter-lifecycle">${optionsHtml(['Active', 'EOL'], 'All lifecycle statuses')}</select>
-      <input type="text" class="text-input" id="dd-filter-search" placeholder="Search device or SKU…" autocomplete="off" style="min-width:220px;" />
-    </div>
-    <div class="card table-card">
-      <div class="table-scroll"><table>
-        <thead><tr><th>SKU</th><th>Device</th><th>Category</th><th>Group</th><th class="num">Unit cost</th><th>Lifecycle</th></tr></thead>
-        <tbody id="dd-tbody"></tbody>
-      </table></div>
-    </div>
-  `;
-  function render() {
-    const catSel = document.getElementById('dd-filter-category').value;
-    const groupSel = document.getElementById('dd-filter-group').value;
-    const lifecycleSel = document.getElementById('dd-filter-lifecycle').value;
-    const q = document.getElementById('dd-filter-search').value.trim().toLowerCase();
-    const rows = DEVICE_MASTER.filter(d =>
-      (!catSel || d.category === catSel) &&
-      (!groupSel || d.group === groupSel) &&
-      (!lifecycleSel || d.lifecycle === lifecycleSel) &&
-      (!q || d.name.toLowerCase().includes(q) || d.sku.toLowerCase().includes(q))
-    );
-    const tbody = document.getElementById('dd-tbody');
-    if (!rows.length) {
-      tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:26px;">No devices match these filters.</td></tr>`;
-      return;
-    }
-    tbody.innerHTML = rows.map(d => `
-      <tr>
-        <td class="cell-muted">${d.sku}</td>
-        <td class="cell-strong">${escapeXml(d.name)}</td>
-        <td>${d.category}</td>
-        <td class="cell-muted">${d.group}</td>
-        <td class="num">$${fmtNum(d.unitCost)}</td>
-        <td>${badge(d.lifecycle)}</td>
-      </tr>`).join('');
-  }
-  ['dd-filter-category', 'dd-filter-group', 'dd-filter-lifecycle'].forEach(id => document.getElementById(id).addEventListener('change', render));
-  document.getElementById('dd-filter-search').addEventListener('input', render);
-  render();
-}
-
 function buildAssistantPage() {
   document.getElementById('page-assistant').innerHTML = `
     <div class="page-head">
@@ -4145,11 +3242,6 @@ const PAGE_META = {
   pos: { title: 'Purchase Orders', crumb: 'Nexus SCM / Purchase Orders' },
   inventory: { title: 'Inventory & Stock', crumb: 'Nexus SCM / Inventory' },
   plan: { title: 'Detailed Plan', crumb: 'Nexus SCM / Detailed Plan' },
-  'param-inv-target': { title: 'Inventory Target', crumb: 'Nexus SCM / Parameters / Inventory Target' },
-  'param-lead-time': { title: 'Supplier Lead Time', crumb: 'Nexus SCM / Parameters / Supplier Lead Time' },
-  'param-transfer-matrix': { title: 'Intra Company Transfer Matrix', crumb: 'Nexus SCM / Parameters / Intra Company Transfer Matrix' },
-  'param-distribution-matrix': { title: 'Distribution Matrix', crumb: 'Nexus SCM / Parameters / Distribution Matrix' },
-  'param-device-details': { title: 'Device Details', crumb: 'Nexus SCM / Parameters / Device Details' },
   assistant: { title: 'AI Assistant', crumb: 'Nexus SCM / AI Assistant' },
 };
 
@@ -4174,11 +3266,6 @@ buildDemandPage();
 buildPOPage();
 buildInventoryPage();
 buildPlanPage();
-buildInventoryTargetPage();
-buildSupplierLeadTimePage();
-buildTransferMatrixPage();
-buildDistributionMatrixPage();
-buildDeviceDetailsPage();
 buildAssistantPage();
 </script>
 </body>
