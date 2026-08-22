@@ -328,25 +328,6 @@
   .dd-expand-table th, .dd-expand-table td { padding: 8px 10px; }
   .dd-expand-table select.dd-input { width: 100%; }
   .dd-subempty { color: var(--text-muted); font-size: 12px; padding: 10px 14px; }
-  .demand-group-row { cursor: pointer; }
-  .demand-group-row:hover { background: var(--page-plane); }
-  .demand-detail-row td { background: var(--page-plane); }
-  .demand-detail-row td:nth-child(2) { padding-left: 26px; }
-  .rf-toggle-row:hover td { filter: brightness(0.97); }
-  .rf-rec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
-  .rf-rec-card { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; background: var(--surface); display: flex; flex-direction: column; gap: 8px; }
-  .rf-rec-card-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-  .rf-rec-badge { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; padding: 3px 8px; border-radius: 999px; }
-  .rf-rec-badge-po { background: var(--status-info-tint); color: var(--status-info); }
-  .rf-rec-badge-ship { background: var(--brand-orange-tint); color: var(--brand-orange-700); }
-  .rf-rec-badge-refurb { background: var(--status-neutral-tint); color: var(--text-secondary); }
-  .rf-rec-qty { font-size: 12.5px; font-weight: 700; color: var(--text-primary); }
-  .rf-rec-detail { font-size: 13px; color: var(--text-primary); line-height: 1.45; }
-  .rf-rec-meta { font-size: 11.5px; color: var(--text-muted); }
-  .rf-rec-actions { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
-  .rf-rec-decision { font-size: 12px; font-weight: 700; padding: 5px 4px; }
-  .rf-rec-decision-accepted { color: var(--status-good); }
-  .rf-rec-decision-rejected { color: var(--text-muted); }
   .success-banner {
     display: flex; align-items: center; gap: 10px; background: var(--status-good-tint); color: #0a7d0a;
     font-size: 13px; font-weight: 700; padding: 13px 18px; border-radius: 10px; margin-bottom: 18px;
@@ -541,18 +522,6 @@
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 13h4v8H3v-8Zm7-8h4v16h-4V5Zm7 5h4v11h-4V10Z" fill="currentColor"/></svg>
         Overview
       </div>
-      <div class="nav-item" data-page="alerts">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6 10a6 6 0 1112 0c0 3 1 4.5 2 6H4c1-1.5 2-3 2-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.5 20a2.5 2.5 0 005 0" stroke="currentColor" stroke-width="1.6"/></svg>
-        Alerts
-      </div>
-      <div class="nav-item" data-page="recommendations">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 3l1.8 4.6L18 9.2l-4.2 1.7L12 15l-1.8-4.1L6 9.2l4.2-1.6L12 3Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/><path d="M18.5 15l.9 2.2 2.1.8-2.1.8-.9 2.2-.9-2.2-2.1-.8 2.1-.8.9-2.2Z" fill="currentColor"/></svg>
-        Recommendations
-      </div>
-      <div class="nav-item" data-page="plan">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        Detailed Plan
-      </div>
       <div class="nav-item" data-page="demand">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 17l5-6 4 4 8-9" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Demand
@@ -564,6 +533,18 @@
       <div class="nav-item" data-page="inventory">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 7l9-4 9 4-9 4-9-4Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 7v10l9 4 9-4V7M12 11v10" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
         Inventory
+      </div>
+      <div class="nav-item" data-page="plan">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        Detailed Plan
+      </div>
+      <div class="nav-item" data-page="recommendations">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 3l1.8 4.6L18 9.2l-4.2 1.7L12 15l-1.8-4.1L6 9.2l4.2-1.6L12 3Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" fill="none"/><path d="M18.5 15l.9 2.2 2.1.8-2.1.8-.9 2.2-.9-2.2-2.1-.8 2.1-.8.9-2.2Z" fill="currentColor"/></svg>
+        Recommendations
+      </div>
+      <div class="nav-item" data-page="alerts">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6 10a6 6 0 1112 0c0 3 1 4.5 2 6H4c1-1.5 2-3 2-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.5 20a2.5 2.5 0 005 0" stroke="currentColor" stroke-width="1.6"/></svg>
+        Alerts
       </div>
 
       <div class="nav-section-label">Parameters</div>
@@ -733,12 +714,6 @@ const OPCOS = ['Caribbean', 'Costa Rica', 'Puerto Rico', 'Panama'];
 
 const CATEGORIES = ['CPE Devices', 'Set-Top Boxes', 'Networking', 'Fiber & Cable', 'Voice & Phones', 'Power & Accessories', 'Unclassified'];
 
-// Demand-page-only category taxonomy (coarser than CATEGORIES above, which
-// stays as-is for Inventory/Device Details). Every demand line is remapped
-// into one of these two buckets — see DEMAND_CATEGORY_MAP below.
-const DEMAND_CATEGORIES = ['Entertainment', 'Connectivity FTTH'];
-const DEMAND_CATEGORY_MAP = { 'Set-Top Boxes': 'Entertainment' }; // anything else -> 'Connectivity FTTH'
-
 // Real device catalog names (from the Opco/market/device Open Order file),
 // used for the Detailed Plan rollforward's device picker.
 const ROLLFORWARD_DEVICES = [
@@ -780,16 +755,12 @@ const DEMAND = [
 ].map(d => {
   const rate = d.committed / d.forecast;
   const status = rate >= 0.95 ? 'Fulfilled' : rate >= 0.8 ? 'At Risk' : 'Unmet';
-  const category = DEMAND_CATEGORY_MAP[d.category] || 'Connectivity FTTH';
-  return { ...d, category, rate, status };
+  return { ...d, rate, status };
 });
 
-// Distinct device groups seen across current demand lines, plus a fixed set
-// of additional entertainment/video group options — used as the "Group"
-// dropdown on the New Demand form. No existing demand line's group value is
-// changed; these are just extra choices available when adding a new line.
-const EXTRA_GROUPS = ['Legacy Video', 'ONT', 'HUB TV - STB', 'HUB TV - Stick'];
-const GROUPS = [...new Set([...DEMAND.map(d => d.group), ...EXTRA_GROUPS])].sort();
+// Distinct device groups seen across current demand lines — used as the
+// "Group" dropdown on the New Demand form.
+const GROUPS = [...new Set(DEMAND.map(d => d.group))].sort();
 
 // Of the 24 real markets, only these actually carry mock demand/inventory
 // lines — used wherever a chart/KPI aggregates "by market" so it doesn't
@@ -2380,13 +2351,9 @@ const INVENTORY_STOCK_RAW = [
   { sku: '311171804', product: 'PATCHCORD 5FT CAT5E WHITE', category: 'Fiber & Cable', market: 'USVI', onHand: 306, monthly: [306,306,306,306,306,306] },
 ];
 
-// Reorder point, unit cost, and lead time were not part of the uploaded
-// stock file, so they're synthesized deterministically per SKU/market
-// (reorder, lead time) and per SKU (unit cost, by category price band) —
-// seeded so re-renders stay stable. The lead-time band per category is
-// anchored to the one real figure this app has (the Supplier Lead Time
-// page's uploaded rows are all 150 days, for CPE-type devices), so CPE/STB
-// devices' synthesized range tops out there too.
+// Reorder point and unit cost were not part of the uploaded stock file, so
+// they're synthesized deterministically per SKU/market (reorder) and per SKU
+// (unit cost, by category price band) — seeded so re-renders stay stable.
 const INVENTORY_STOCK = INVENTORY_STOCK_RAW.map(r => {
   const reorderRng = mulberry32(hashSeed(r.sku + '|' + r.market + '|reorder'));
   const reorderFactor = 0.6 + reorderRng() * 0.9; // 0.6 - 1.5x on-hand
@@ -2399,17 +2366,9 @@ const INVENTORY_STOCK = INVENTORY_STOCK_RAW.map(r => {
   const [lo, hi] = priceBands[r.category] || [20, 60];
   const costRng = mulberry32(hashSeed(r.sku + '|cost'));
   const unitCost = Math.round((lo + costRng() * (hi - lo)) * 100) / 100;
-  const leadTimeBands = {
-    'Set-Top Boxes': [30, 150], 'CPE Devices': [30, 150], 'Networking': [45, 120],
-    'Fiber & Cable': [20, 75], 'Voice & Phones': [30, 90], 'Power & Accessories': [15, 60],
-    'Unclassified': [30, 90],
-  };
-  const [ltLo, ltHi] = leadTimeBands[r.category] || [30, 90];
-  const leadTimeRng = mulberry32(hashSeed(r.sku + '|' + r.market + '|leadtime'));
-  const leadTimeDays = Math.round(ltLo + leadTimeRng() * (ltHi - ltLo));
   const ratio = r.onHand / reorder;
   const status = ratio >= 1.2 ? 'OK' : ratio >= 0.6 ? 'Low' : 'Critical';
-  return { ...r, reorder, unitCost, leadTimeDays, ratio, status, value: Math.round(r.onHand * unitCost) };
+  return { ...r, reorder, unitCost, ratio, status, value: Math.round(r.onHand * unitCost) };
 });
 
 // Month labels matching each INVENTORY_STOCK_RAW row's `monthly` series
@@ -2467,26 +2426,6 @@ const PLAN = DEMAND.map(d => {
     pos: openPos(d.sku, d.market),
   };
 });
-
-// No real per-week demand/supply grid exists in this prototype (DEMAND is a
-// single-period total per SKU/market), so each shortage line gets a
-// deterministic "weeks out" seeded from its own identity — stable across
-// reloads, used only to split the Overview KPIs into near-/longer-term
-// shortage counts.
-function shortageWeeksOut(p) {
-  const rng = mulberry32(hashSeed(p.sku + '|' + p.market + '|weeksOut'));
-  return 1 + Math.floor(rng() * 20); // 1-20 weeks out
-}
-
-// Real Open_Order_Data.xlsx rows all carry status "Open" (no Delayed/
-// Delivered values survived the import), so "overdue" is derived from the
-// ETA itself — a parseable date earlier than the app's pinned TODAY — not
-// from status.
-function isOverduePO(p) {
-  if (!p.eta || p.eta === 'TBC' || p.status === 'Delivered') return false;
-  const d = new Date(p.eta);
-  return !isNaN(d) && d < TODAY;
-}
 
 // Total on-hand vs. total forecasted demand vs. stock sitting idle beyond
 // what a line's own forecast needs (summed only where on-hand > demand —
@@ -2901,14 +2840,7 @@ const DEVICE_DETAIL_RECORDS = [
   { name: 'REMOTE TIVO LITE CREEK W/', market: 'PAN', group: 'Unclassified', category: 'Unclassified', vendor: 'UNIV ELECT', vendorItemCode: 'R37023BC0000005', annexItemCode: '1030111PA-AA', deviceType: 'CPE', fulfilmentDays: 150, inventoryMonths: 2 },
   { name: 'MODEM DOCSIS 3.1 WIFI6', market: 'PAN', group: 'Connectivity HFC', category: 'HFC 3.1', vendor: 'SAGEMCOM B', vendorItemCode: '254020472', annexItemCode: '302131-AA', deviceType: 'CPE', fulfilmentDays: 150, inventoryMonths: 2 },
   { name: 'MODEM DOCSIS 3.1WIFI6 FAST3896', market: 'PAN', group: 'Connectivity HFC', category: 'HFC 3.1', vendor: 'SAGEMCOM B', vendorItemCode: '254020472', annexItemCode: '302131-WAR', deviceType: 'CPE', fulfilmentDays: 150, inventoryMonths: 2 },
-].map((r, i) => {
-  // Deterministic per-record unit price — no real price data behind the
-  // Supplier List upload, so seeded from the record's own identity (same
-  // "stable mock data" convention used for cost fields elsewhere).
-  const rng = mulberry32(hashSeed(r.name + '|' + r.vendor + '|' + r.market + '|' + r.annexItemCode + '|price'));
-  const price = Math.round((15 + rng() * 185) * 100) / 100;
-  return { id: i, active: true, price, ...r };
-});
+].map((r, i) => ({ id: i, active: true, ...r }));
 const FULFILMENT_TYPES = ['New', 'Refurbished', 'Both'];
 const DEVICE_DETAIL_BY_ID = new Map(DEVICE_DETAIL_RECORDS.map(r => [r.id, r]));
 
@@ -3184,62 +3116,6 @@ function renderLineChart(container, { labels, values, color, unitLabel }) {
   overlay.addEventListener('mouseleave', () => { crosshair.style.opacity = 0; svg.querySelectorAll('.pt').forEach(d => d.setAttribute('r', 5)); hideTooltip(); });
 }
 
-function renderMultiLineChart(container, { labels, series, unitLabel, height }) {
-  unitLabel = unitLabel || 'Units';
-  height = height || 220;
-  const innerW = VB_W - PAD.left - PAD.right;
-  const innerH = VB_H - PAD.top - PAD.bottom;
-  const allValues = series.flatMap(s => s.values);
-  const yMax = niceCeil(Math.max(...allValues, 1) * 1.2);
-  const n = labels.length;
-  const stepX = innerW / (n - 1);
-  const xAt = i => PAD.left + stepX * i;
-  const yAt = v => PAD.top + innerH - (v / yMax) * innerH;
-  let gridlines = '', yLabels = '';
-  const ticks = 4;
-  for (let i = 0; i <= ticks; i++) {
-    const v = yMax * i / ticks;
-    const y = yAt(v);
-    gridlines += `<line x1="${PAD.left}" y1="${y}" x2="${VB_W - PAD.right}" y2="${y}" stroke="${C.grid}" stroke-width="1"/>`;
-    yLabels += `<text x="${PAD.left - 8}" y="${y + 3}" text-anchor="end" font-size="9.5" fill="${C.muted}">${fmtCompact(v)}</text>`;
-  }
-  let xLabels = '';
-  labels.forEach((lab, i) => {
-    xLabels += `<text x="${xAt(i)}" y="${VB_H - PAD.bottom + 18}" text-anchor="middle" font-size="9.5" fill="${C.muted}">${escapeXml(lab)}</text>`;
-  });
-  const baseline = `<line x1="${PAD.left}" y1="${PAD.top + innerH}" x2="${VB_W - PAD.right}" y2="${PAD.top + innerH}" stroke="${C.baseline}" stroke-width="1"/>`;
-  let lines = '', dots = '';
-  const seriesPts = series.map(s => s.values.map((v, i) => ({ x: xAt(i), y: yAt(v), v })));
-  series.forEach((s, si) => {
-    const pts = seriesPts[si];
-    const linePath = 'M' + pts.map(p => `${p.x},${p.y}`).join(' L');
-    lines += `<path d="${linePath}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
-    pts.forEach((p, i) => {
-      dots += `<circle class="pt" data-s="${si}" data-i="${i}" cx="${p.x}" cy="${p.y}" r="3.5" fill="${s.color}" stroke="${C.surface}" stroke-width="1.5"/>`;
-    });
-  });
-  container.innerHTML = `<svg class="chart-svg" viewBox="0 0 ${VB_W} ${VB_H}" preserveAspectRatio="none" style="height:${height}px">
-    ${gridlines}${yLabels}${baseline}
-    ${lines}${dots}${xLabels}
-    <line class="crosshair" x1="0" y1="${PAD.top}" x2="0" y2="${PAD.top + innerH}" stroke="${C.baseline}" stroke-width="1" style="opacity:0"/>
-    <rect class="overlay" x="${PAD.left}" y="${PAD.top}" width="${innerW}" height="${innerH}" fill="transparent"/>
-  </svg>`;
-  const svg = container.querySelector('svg');
-  const overlay = svg.querySelector('.overlay');
-  const crosshair = svg.querySelector('.crosshair');
-  overlay.addEventListener('mousemove', e => {
-    const pt0 = svg.createSVGPoint(); pt0.x = e.clientX; pt0.y = e.clientY;
-    const p = pt0.matrixTransform(svg.getScreenCTM().inverse());
-    let idx = 0, best = Infinity;
-    labels.forEach((lab, i) => { const d = Math.abs(xAt(i) - p.x); if (d < best) { best = d; idx = i; } });
-    crosshair.setAttribute('x1', xAt(idx)); crosshair.setAttribute('x2', xAt(idx)); crosshair.style.opacity = 1;
-    svg.querySelectorAll('.pt').forEach(d => d.setAttribute('r', 3.5));
-    svg.querySelectorAll(`.pt[data-i="${idx}"]`).forEach(d => d.setAttribute('r', 5.5));
-    showTooltip(e.clientX, e.clientY, labels[idx], series.map(s => ({ label: s.name, value: fmtNum(s.values[idx]), color: s.color })));
-  });
-  overlay.addEventListener('mouseleave', () => { crosshair.style.opacity = 0; svg.querySelectorAll('.pt').forEach(d => d.setAttribute('r', 3.5)); hideTooltip(); });
-}
-
 /* ======================================================================
    MONTHLY SERIES — synthesizes a Jan-Dec 2026 + 2027 breakdown for each
    demand line from its existing Q3 2026 forecast, so the Demand table can
@@ -3260,23 +3136,6 @@ function monthlySeriesFor(row) {
   [6, 7, 8].forEach(m => { y2026[m] = Math.round(y2026[m] * q3Scale); });
   const growth = YOY_GROWTH[idx % YOY_GROWTH.length];
   const y2027 = y2026.map(v => Math.round(v * growth));
-  return {
-    y2026, y2027,
-    total2026: y2026.reduce((s, v) => s + v, 0),
-    total2027: y2027.reduce((s, v) => s + v, 0),
-  };
-}
-
-// Elementwise-sums monthlySeriesFor(...) across multiple demand lines — used
-// by the Demand page's Market/Device rollup rows.
-function aggregateMonthlySeries(rows) {
-  const y2026 = new Array(12).fill(0);
-  const y2027 = new Array(12).fill(0);
-  rows.forEach(d => {
-    const m = monthlySeriesFor(d);
-    m.y2026.forEach((v, i) => { y2026[i] += v; });
-    m.y2027.forEach((v, i) => { y2027[i] += v; });
-  });
   return {
     y2026, y2027,
     total2026: y2026.reduce((s, v) => s + v, 0),
@@ -3343,26 +3202,11 @@ function buildRollforward(opco, market, device) {
   const wobble1 = rng(), wobble2 = rng(), wobble3 = rng();
   const intraCoRatioBase = 0.25 + rng() * 0.3;
 
-  // Total monthly demand (installUsed + installNew) is broken into 7 named
-  // demand drivers for display — weights are fixed per Opco/Market/Device
-  // (not re-rolled per month) so the mix reads as stable, and the last
-  // bucket ("Other demand") absorbs whatever's left after rounding the
-  // other six, so the 7 rows always sum exactly to the same total demand
-  // that the Beginning→Final Inventory math already uses.
-  const wExternal = 0.30 + rng() * 0.10;
-  const w2ndBox = 0.08 + rng() * 0.06;
-  const wDtvTo = 0.05 + rng() * 0.05;
-  const wDtvAway = 0.04 + rng() * 0.04;
-  const wDtvSwap = 0.03 + rng() * 0.03;
-  const wB2B = 0.06 + rng() * 0.06;
-
   const R = {
     beginningInv: [], installUsed: [], installNew: [], grossChurn: [], collectionRate: [],
     returnsNet: [], undeployableRecv: [], totalUndeployable: [], volSentRefurb: [], trrPassRate: [],
     refurbUnit: [], orderReceived: [], intraCoTransfer: [], externalVendorOrders: [],
-    finalInv: [], weeksStock: [], excessQty: [],
-    externalFirstConnects: [], secondBoxGrowth: [], dtvMigrationTo: [], dtvRguMigrationAway: [],
-    dtvRguTechSwap: [], installB2BSOHO: [], otherDemand: [], totalDemand: [],
+    finalInv: [], monthsStock: [], excessQty: [],
     recRefurbQty: [], recPOQty: [], recShipment: [],
   };
 
@@ -3372,14 +3216,6 @@ function buildRollforward(opco, market, device) {
     const yearGrowth = i < 12 ? 1 : 1.07;
     const installUsed = Math.round(baseInstall * seasonal * yearGrowth);
     const installNew = Math.round(installUsed * newInstallRatio);
-    const totalDemand = installUsed + installNew;
-    const externalFirstConnects = Math.round(totalDemand * wExternal);
-    const secondBoxGrowth = Math.round(totalDemand * w2ndBox);
-    const dtvMigrationTo = Math.round(totalDemand * wDtvTo);
-    const dtvRguMigrationAway = Math.round(totalDemand * wDtvAway);
-    const dtvRguTechSwap = Math.round(totalDemand * wDtvSwap);
-    const installB2BSOHO = Math.round(totalDemand * wB2B);
-    const otherDemand = totalDemand - (externalFirstConnects + secondBoxGrowth + dtvMigrationTo + dtvRguMigrationAway + dtvRguTechSwap + installB2BSOHO);
     const grossChurn = Math.round(churnBase * seasonal * yearGrowth);
     const collRate = Math.min(0.95, collectionRateBase + Math.sin(i + wobble1 * 6) * 0.02);
     const returnsNet = Math.round(grossChurn * collRate);
@@ -3403,7 +3239,7 @@ function buildRollforward(opco, market, device) {
     // recommended replenishment below rather than an implausible negative figure.
     const finalInv = Math.max(0, beginInv - installUsed - installNew + refurbUnit + orderReceived);
     const avgDemand = (installUsed + installNew) || 1;
-    const weeksStock = +((finalInv / avgDemand) * (52 / 12)).toFixed(1);
+    const monthsStock = +(finalInv / avgDemand).toFixed(1);
     const targetStock = avgDemand * 2;
     const excessQty = Math.max(0, finalInv - targetStock);
 
@@ -3418,14 +3254,6 @@ function buildRollforward(opco, market, device) {
     R.beginningInv.push(beginInv);
     R.installUsed.push(installUsed);
     R.installNew.push(installNew);
-    R.externalFirstConnects.push(externalFirstConnects);
-    R.secondBoxGrowth.push(secondBoxGrowth);
-    R.dtvMigrationTo.push(dtvMigrationTo);
-    R.dtvRguMigrationAway.push(dtvRguMigrationAway);
-    R.dtvRguTechSwap.push(dtvRguTechSwap);
-    R.installB2BSOHO.push(installB2BSOHO);
-    R.otherDemand.push(otherDemand);
-    R.totalDemand.push(totalDemand);
     R.grossChurn.push(grossChurn);
     R.collectionRate.push(collRate);
     R.returnsNet.push(returnsNet);
@@ -3438,7 +3266,7 @@ function buildRollforward(opco, market, device) {
     R.intraCoTransfer.push(intraCoTransfer);
     R.externalVendorOrders.push(externalVendorOrders);
     R.finalInv.push(finalInv);
-    R.weeksStock.push(weeksStock);
+    R.monthsStock.push(monthsStock);
     R.excessQty.push(excessQty);
     R.recRefurbQty.push(recRefurb);
     R.recPOQty.push(recPO);
@@ -3451,32 +3279,23 @@ function buildRollforward(opco, market, device) {
 
 const ROLLFORWARD_ROWS = [
   { type: 'data', label: 'Beginning Inventory', def: 'Total deployable stock begin of month', key: 'beginningInv', fmt: 'num', bold: true },
-  { type: 'header', label: 'Demand', key: 'totalDemand', fmt: 'num' },
-  { type: 'data', label: 'Demand Driver', def: 'Total Demand (A)', key: 'totalDemand', fmt: 'num', bold: true, shaded: true, collapsible: true, groupId: 'tdA' },
-  { type: 'data', label: 'External first connects', key: 'externalFirstConnects', fmt: 'num', indent: true, group: 'tdA' },
-  { type: 'data', label: 'Additions of 2nd box growth', key: 'secondBoxGrowth', fmt: 'num', indent: true, group: 'tdA' },
-  { type: 'data', label: 'DTV migration to (CPE type)', key: 'dtvMigrationTo', fmt: 'num', indent: true, group: 'tdA' },
-  { type: 'data', label: 'DTV RGU migration away from (CPE type)', key: 'dtvRguMigrationAway', fmt: 'num', indent: true, group: 'tdA' },
-  { type: 'data', label: 'DTV RGU Tech. swap (to CPE type)', key: 'dtvRguTechSwap', fmt: 'num', indent: true, group: 'tdA' },
-  { type: 'data', label: 'Installations B2B/SOHO (E&G)', key: 'installB2BSOHO', fmt: 'num', indent: true, group: 'tdA' },
-  { type: 'data', label: 'Other demand', key: 'otherDemand', fmt: 'num', indent: true, group: 'tdA' },
-  { type: 'data', label: 'Installation Type', def: 'Total Demand (B)', key: 'totalDemand', fmt: 'num', bold: true, shaded: true, collapsible: true, groupId: 'tdB' },
-  { type: 'data', label: 'Installation Used', key: 'installUsed', fmt: 'num', indent: true, group: 'tdB' },
-  { type: 'data', label: 'Installation New', key: 'installNew', fmt: 'num', indent: true, group: 'tdB' },
-  { type: 'header', label: 'Refurbishment', key: 'refurbUnit', fmt: 'num', collapsible: true, groupId: 'refurb' },
-  { type: 'data', label: 'Gross Churn', def: '# customer churn data', key: 'grossChurn', fmt: 'num', indent: true, group: 'refurb' },
-  { type: 'data', label: 'Collection rate', def: '% Collection Rate', key: 'collectionRate', fmt: 'pct', indent: true, group: 'refurb' },
-  { type: 'data', label: 'Returns/collections (net)', def: '# Devices collected', key: 'returnsNet', fmt: 'num', indent: true, group: 'refurb' },
-  { type: 'data', label: 'Undeployable delivery Received (Intrcompany)', def: 'Undeployable delivery from Intercompany', key: 'undeployableRecv', fmt: 'num', indent: true, group: 'refurb' },
-  { type: 'data', label: 'Total Undeployable Inventory', def: 'Returns (Net) + Undeployable delivery (net)', key: 'totalUndeployable', fmt: 'num', indent: true, group: 'refurb' },
-  { type: 'data', label: 'Volume Sent to Refurbishment', def: 'Projected/Actual based on demand', key: 'volSentRefurb', fmt: 'num', indent: true, group: 'refurb' },
-  { type: 'data', label: 'TRR Pass Rate', def: '% Pass rate', key: 'trrPassRate', fmt: 'pct', indent: true, group: 'refurb' },
-  { type: 'data', label: 'Refurbished Deployable Unit', def: 'Tested and refurbished (successful)', key: 'refurbUnit', fmt: 'num', indent: true, group: 'refurb' },
-  { type: 'data', label: 'Order Received', def: 'Delivery new (from supplier)', key: 'orderReceived', fmt: 'num', bold: true, shaded: true, collapsible: true, groupId: 'orderReceived' },
-  { type: 'data', label: 'Intra Company Transfer', def: 'Portion of Order Received moved from another Opco', key: 'intraCoTransfer', fmt: 'num', indent: true, group: 'orderReceived' },
-  { type: 'data', label: 'External Vendor Orders', def: 'Portion of Order Received from a new vendor PO', key: 'externalVendorOrders', fmt: 'num', indent: true, group: 'orderReceived' },
+  { type: 'header', label: 'All Item Use/Demand' },
+  { type: 'data', label: 'Installation Used', key: 'installUsed', fmt: 'num', indent: true },
+  { type: 'data', label: 'Installation New', key: 'installNew', fmt: 'num', indent: true },
+  { type: 'header', label: 'Refurbishment' },
+  { type: 'data', label: 'Gross Churn', def: '# customer churn data', key: 'grossChurn', fmt: 'num', indent: true },
+  { type: 'data', label: 'Collection rate', def: '% Collection Rate', key: 'collectionRate', fmt: 'pct', indent: true },
+  { type: 'data', label: 'Returns/collections (net)', def: '# Devices collected', key: 'returnsNet', fmt: 'num', indent: true },
+  { type: 'data', label: 'Undeployable delivery Received (Intrcompany)', def: 'Undeployable delivery from Intercompany', key: 'undeployableRecv', fmt: 'num', indent: true },
+  { type: 'data', label: 'Total Undeployable Inventory', def: 'Returns (Net) + Undeployable delivery (net)', key: 'totalUndeployable', fmt: 'num', indent: true },
+  { type: 'data', label: 'Volume Sent to Refurbishment', def: 'Projected/Actual based on demand', key: 'volSentRefurb', fmt: 'num', indent: true },
+  { type: 'data', label: 'TRR Pass Rate', def: '% Pass rate', key: 'trrPassRate', fmt: 'pct', indent: true },
+  { type: 'data', label: 'Refurbished Deployable Unit', def: 'Tested and refurbished (successful)', key: 'refurbUnit', fmt: 'num', indent: true },
+  { type: 'data', label: 'Order Received', def: 'Delivery new (from supplier)', key: 'orderReceived', fmt: 'num', bold: true },
+  { type: 'data', label: 'Intra Company Transfer', def: 'Portion of Order Received moved from another Opco', key: 'intraCoTransfer', fmt: 'num', indent: true },
+  { type: 'data', label: 'External Vendor Orders', def: 'Portion of Order Received from a new vendor PO', key: 'externalVendorOrders', fmt: 'num', indent: true },
   { type: 'data', label: 'Final Inventory', key: 'finalInv', fmt: 'num', bold: true },
-  { type: 'data', label: 'Weeks of Stock', key: 'weeksStock', fmt: 'dec1', italic: true },
+  { type: 'data', label: 'Months of Stock', key: 'monthsStock', fmt: 'dec1', italic: true },
   { type: 'data', label: 'Excess Quantity', key: 'excessQty', fmt: 'num', italic: true },
   { type: 'header', label: 'Recommendations', italic: true },
   { type: 'data', label: 'Recommended Refurbished Quantity', key: 'recRefurbQty', fmt: 'num', italic: true, indent: true },
@@ -3488,82 +3307,19 @@ function fmtRF(v, fmt) {
   if (fmt === 'dec1') return v.toFixed(1);
   return fmtNum(v);
 }
-
-// Real supplier names pulled from the actual PO history, reused here as a
-// deterministic seeded pick per Opco/Market/Device — same "ground real data
-// in a real pool, synthesize the link" approach used for lead time elsewhere
-// in this prototype.
-const PO_VENDOR_POOL = [...new Set(PURCHASE_ORDERS.map(p => p.supplier))];
-
-// Expands the single-number recommendation rows already computed by
-// buildRollforward (recPOQty / recShipment / recRefurbQty, taken at the
-// current planning month) into the extra detail — vendor, lane, cost — that
-// the Recommended Actions cards below the rollforward table need. All of it
-// is deterministically seeded from Opco|Market|Device so it's stable across
-// re-renders, but it's illustrative, same as the rest of this page.
-function rollforwardRecommendationDetails(opco, market, device, R) {
-  const idx = CURRENT_MONTH_IDX;
-  const rng = mulberry32(hashSeed(`${opco}|${market}|${device}|recdetail`));
-
-  const poQty = R.recPOQty[idx];
-  const vendor = PO_VENDOR_POOL[Math.floor(rng() * PO_VENDOR_POOL.length)];
-  const poLeadDays = 20 + Math.floor(rng() * 100);
-  const unitCost = Math.round(35 + rng() * 260);
-  const poRef = `PO-REC-${hashSeed(`${opco}|${market}|${device}`).toString(36).slice(-5).toUpperCase()}`;
-
-  const shipQty = R.recShipment[idx];
-  const currentMarketRow = MARKETS.find(m => m.name === market);
-  const sameOpcoMarkets = MARKETS.filter(m => m.name !== market && m.opco === (currentMarketRow ? currentMarketRow.opco : opco));
-  const otherMarkets = MARKETS.filter(m => m.name !== market);
-  const shipPool = sameOpcoMarkets.length ? sameOpcoMarkets : otherMarkets;
-  const fromMarket = shipPool[Math.floor(rng() * shipPool.length)] || null;
-  const laneRng = fromMarket ? mulberry32(hashSeed(`shiplane|${fromMarket.code}|${currentMarketRow ? currentMarketRow.code : market}`)) : null;
-  const shipLeadDays = laneRng ? 3 + Math.floor(laneRng() * 12) : 0;
-  const shipCost = laneRng ? Math.round(150 + laneRng() * 850) : 0;
-
-  const refurbQty = R.recRefurbQty[idx];
-
-  return {
-    po: { qty: poQty, vendor, poRef, leadDays: poLeadDays, unitCost, totalCost: poQty * unitCost },
-    shipment: { qty: shipQty, fromMarket: fromMarket ? fromMarket.name : null, fromOpco: fromMarket ? fromMarket.opco : null, leadDays: shipLeadDays, cost: shipCost },
-    refurb: { qty: refurbQty },
-  };
-}
-function rollforwardTableHtml(R, idSuffix, expandedGroups) {
+function rollforwardTableHtml(R, idSuffix) {
   const suffix = idSuffix || '';
-  const expanded = expandedGroups || new Set();
   const dataColCount = ROLLFORWARD_MONTHS.length;
   const monthHeaders = ROLLFORWARD_MONTHS.map(m => `<th class="num">${m.replace(' ’26', '').replace(' ’27', '')}</th>`).join('');
   const bodyRows = ROLLFORWARD_ROWS.map(row => {
     if (row.type === 'header') {
-      const headerValues = row.key ? R[row.key] : null;
-      const headerCells = headerValues
-        ? headerValues.map((v, i) => `<td class="num cell-strong" style="background:var(--page-plane);${PHASE_TD[PHASE_BY_COL_24[i]]}">${fmtRF(v, row.fmt)}</td>`).join('')
-        : '<td></td>'.repeat(dataColCount);
-      const isHeaderOpen = row.collapsible ? expanded.has(`${suffix}|${row.groupId}`) : false;
-      const headerChevron = row.collapsible
-        ? `<span class="rf-chevron${isHeaderOpen ? ' expanded' : ''}" style="display:inline-block;margin-right:6px;transition:transform .15s;${isHeaderOpen ? 'transform:rotate(90deg);' : ''}">▸</span>`
-        : '';
-      const headerTrClass = row.collapsible ? ' class="rf-toggle-row"' : '';
-      const headerTrStyle = `background:var(--page-plane);${row.collapsible ? 'cursor:pointer;' : ''}`;
-      const headerTrGroupAttr = row.collapsible ? ` data-group="${row.groupId}"` : '';
-      return `<tr${headerTrClass}${headerTrGroupAttr} style="${headerTrStyle}"><td colspan="2" class="cell-strong" style="${row.italic ? 'font-style:italic;' : ''}">${headerChevron}${row.label}</td>${headerCells}</tr>`;
+      return `<tr style="background:var(--page-plane);"><td colspan="2" class="cell-strong" style="${row.italic ? 'font-style:italic;' : ''}">${row.label}</td>${'<td></td>'.repeat(dataColCount)}</tr>`;
     }
     const values = R[row.key];
-    const shadeStyle = row.shaded ? 'background:var(--page-plane);' : '';
-    const groupKey = row.group ? `${suffix}|${row.group}` : null;
-    const isOpen = row.collapsible ? expanded.has(`${suffix}|${row.groupId}`) : false;
-    const hiddenStyle = (groupKey && !expanded.has(groupKey)) ? 'display:none;' : '';
-    const labelStyle = `${shadeStyle}${row.indent ? 'padding-left:28px;' : ''}${row.bold ? 'font-weight:700;' : ''}${row.italic ? 'font-style:italic;' : ''}`;
-    const defStyle = `${shadeStyle}${row.italic ? 'font-style:italic;' : ''}`;
-    const chevron = row.collapsible
-      ? `<span class="rf-chevron${isOpen ? ' expanded' : ''}" style="display:inline-block;margin-right:6px;transition:transform .15s;${isOpen ? 'transform:rotate(90deg);' : ''}">▸</span>`
-      : '';
-    const trClass = row.collapsible ? ' class="rf-toggle-row"' : '';
-    const trStyle = `${row.collapsible ? 'cursor:pointer;' : ''}${hiddenStyle}`;
-    const trGroupAttr = row.collapsible ? ` data-group="${row.groupId}"` : '';
-    return `<tr${trClass}${trGroupAttr}${trStyle ? ` style="${trStyle}"` : ''}>
-      <td style="${labelStyle}white-space:normal;min-width:220px;">${chevron}${row.label}</td>
+    const labelStyle = `${row.indent ? 'padding-left:28px;' : ''}${row.bold ? 'font-weight:700;' : ''}${row.italic ? 'font-style:italic;' : ''}`;
+    const defStyle = row.italic ? 'font-style:italic;' : '';
+    return `<tr>
+      <td style="${labelStyle}white-space:normal;min-width:220px;">${row.label}</td>
       <td class="cell-sub" style="${defStyle}white-space:normal;min-width:170px;">${row.def || ''}</td>
       ${values.map((v, i) => `<td class="num" style="${labelStyle}${PHASE_TD[PHASE_BY_COL_24[i]]}">${fmtRF(v, row.fmt)}</td>`).join('')}
     </tr>`;
@@ -3796,21 +3552,14 @@ function delta(pct, isGood) {
 function buildOverviewPage() {
   const totalDemand = DEMAND.reduce((s, d) => s + d.forecast, 0);
   const openPOs = PURCHASE_ORDERS.filter(p => p.status !== 'Delivered').length;
-  const overduePOs = PURCHASE_ORDERS.filter(isOverduePO).length;
-  const shortagePlan = PLAN.filter(p => p.flag === 'Shortage');
-  const shortage6wk = shortagePlan.filter(p => shortageWeeksOut(p) <= 6).length;
-  const shortage16wk = shortagePlan.filter(p => shortageWeeksOut(p) <= 16).length;
+  const stockValue = INVENTORY.reduce((s, i) => s + i.value, 0);
+  const shortages = PLAN.filter(p => p.flag === 'Shortage').length;
 
-  // Demand trend by Opco — Feb'26 through Jan'27, matched to the reference
-  // chart's shape/scale. C&W = Caribbean, LC = Costa Rica, PR = Puerto Rico,
-  // Panama = Panama (same order as OPCOS), consistent with the KPI card below.
-  const trendMonths = ["Feb'26", "Mar'26", "Apr'26", "May'26", "Jun'26", "Jul'26", "Aug'26", "Sep'26", "Oct'26", "Nov'26", "Dec'26", "Jan'27"];
-  const trendSeries = [
-    { name: 'C&W', color: '#1f3a6e', values: [40000, 43000, 41000, 45000, 47000, 44000, 48000, 46000, 50000, 49000, 53000, 51000] },
-    { name: 'LC', color: '#ff8a1e', values: [15000, 16500, 15800, 17200, 18000, 17000, 18500, 17800, 19200, 18700, 20500, 19800] },
-    { name: 'PR', color: '#1b6e3a', values: [22000, 23500, 22800, 24500, 26000, 24800, 26500, 25500, 27500, 26800, 29000, 28000] },
-    { name: 'Panama', color: '#7cc7e8', values: [10000, 11200, 10500, 11800, 12500, 11800, 13000, 12200, 13800, 13200, 15000, 14200] },
-  ];
+  const months = ['Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'];
+  const trend = [12800, 13950, 14200, 15600, 16850, totalDemand];
+
+  const stockPosition = stockPositionTotals();
+  const byOpco = stockPositionByOpco();
 
   const recent = [
     { icon: 'critical', text: 'PO-10236 (Small Cell Base Station, Curacao) delayed — revised ETA Aug 22', time: '2h ago' },
@@ -3836,13 +3585,46 @@ function buildOverviewPage() {
     </div>
 
     <div class="grid kpi-grid">
-      ${kpiCard('No. of Shortage Alerts (6 Weeks)', fmtNum(shortage6wk), 'SKU / market pairs at risk in the next 6 weeks')}
-      ${kpiCard('No. of Shortage Alerts (16 Weeks)', fmtNum(shortage16wk), 'SKU / market pairs at risk in the next 16 weeks')}
-      ${kpiCard('Overdue Purchase Orders', fmtNum(overduePOs), `of ${fmtNum(openPOs)} open POs, past original ETA`)}
-      ${kpiCard('Total Open Demand', fmtNum(totalDemand) + ' units', '+8% C&amp;W, -2% LC, +5% PR, -7% Panama')}
+      ${kpiCard('Total open demand', fmtNum(totalDemand) + ' units', 'across all Opcos · Q3 2026', delta(8, true))}
+      ${kpiCard('Active purchase orders', openPOs, 'of ' + PURCHASE_ORDERS.length + ' total POs', delta(3, true))}
+      ${kpiCard('Inventory value', fmtMoneyCompact(stockValue), 'on hand, all warehouses', delta(-2, false))}
+      ${kpiCard('Shortage alerts', shortages, 'SKU / market pairs at risk', delta(shortages, false))}
+    </div>
+
+    <div class="grid charts-grid">
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-title">Demand trend</div>
+            <div class="card-sub">Total forecasted units per month, all markets</div>
+          </div>
+        </div>
+        <div class="chart-wrap" id="chart-overview-trend"></div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-title">Total inventory vs. demand, by Opco</div>
+            <div class="card-sub">Units, current period</div>
+          </div>
+        </div>
+        <div class="chart-wrap" id="chart-overview-stock"></div>
+      </div>
     </div>
 
     <div class="card" style="margin-bottom:18px;">
+      <div class="card-head"><div class="card-title">Recent activity</div></div>
+      <div style="display:flex;flex-direction:column;gap:2px;margin-top:6px;">
+        ${recent.map(r => `
+          <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 2px;border-bottom:1px solid var(--border);">
+            <span class="dot" style="width:8px;height:8px;border-radius:999px;margin-top:5px;background:var(--status-${r.icon === 'info' ? 'info' : r.icon});flex:0 0 auto;"></span>
+            <span style="font-size:13px;color:var(--text-primary);flex:1;">${r.text}</span>
+            <span style="font-size:11.5px;color:var(--text-muted);white-space:nowrap;">${r.time}</span>
+          </div>`).join('')}
+      </div>
+    </div>
+
+    <div class="card">
       <div class="card-head">
         <div>
           <div class="card-title">Alerts &amp; recommendations</div>
@@ -3862,33 +3644,21 @@ function buildOverviewPage() {
       </div>
       ${alerts.length > shownAlerts.length ? `<div style="padding:10px 2px 2px;font-size:11.5px;"><button class="btn btn-ghost" id="overview-see-all-alerts" style="padding:5px 10px;font-size:11.5px;">+${alerts.length - shownAlerts.length} more — see all alerts</button> <button class="btn btn-ghost" id="overview-see-recommendations" style="padding:5px 10px;font-size:11.5px;">See recommendations</button></div>` : ''}
     </div>
-
-    <div class="card" style="margin-bottom:18px;">
-      <div class="card-head">
-        <div>
-          <div class="card-title">Demand trend</div>
-          <div class="card-sub">Forecasted units per month, by Opco — Feb'26 to Jan'27</div>
-        </div>
-        <div class="legend" id="chart-overview-trend-legend"></div>
-      </div>
-      <div class="chart-wrap" id="chart-overview-trend"></div>
-    </div>
-
-    <div class="card" style="margin-bottom:18px;">
-      <div class="card-head"><div class="card-title">Recent activity</div></div>
-      <div style="display:flex;flex-direction:column;gap:2px;margin-top:6px;">
-        ${recent.map(r => `
-          <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 2px;border-bottom:1px solid var(--border);">
-            <span class="dot" style="width:8px;height:8px;border-radius:999px;margin-top:5px;background:var(--status-${r.icon === 'info' ? 'info' : r.icon});flex:0 0 auto;"></span>
-            <span style="font-size:13px;color:var(--text-primary);flex:1;">${r.text}</span>
-            <span style="font-size:11.5px;color:var(--text-muted);white-space:nowrap;">${r.time}</span>
-          </div>`).join('')}
-      </div>
-    </div>
   `;
 
-  renderMultiLineChart(document.getElementById('chart-overview-trend'), { labels: trendMonths, series: trendSeries, unitLabel: 'Forecast units', height: 340 });
-  document.getElementById('chart-overview-trend-legend').innerHTML = seriesLegendHtml(trendSeries);
+  renderLineChart(document.getElementById('chart-overview-trend'), { labels: months, values: trend, color: C.s2, unitLabel: 'Forecast units' });
+  renderGroupedBarChart(document.getElementById('chart-overview-stock'), {
+    groups: byOpco.map(o => o.label),
+    series: [
+      { name: 'Total inventory', color: C.s1, values: byOpco.map(o => o.totalInventory) },
+      { name: 'Demand', color: C.s2, values: byOpco.map(o => o.totalDemand) },
+      { name: 'Excess stock', color: C.s3, values: byOpco.map(o => o.excessStock) },
+    ],
+    fmt: fmtCompact,
+  });
+  document.getElementById('chart-overview-stock').insertAdjacentHTML('afterend', seriesLegendHtml([
+    { name: 'Total inventory', color: C.s1 }, { name: 'Demand', color: C.s2 }, { name: 'Excess stock', color: C.s3 },
+  ]));
 
   document.querySelectorAll('.alert-action-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -4364,7 +4134,7 @@ function buildDemandPage() {
 
   document.getElementById('page-demand').innerHTML = `
     <div class="page-head">
-      <div><h2>Demand forecast</h2><p class="desc">Forecasted vs. committed demand by SKU and market for the current planning period. Upload a CSV or Excel file with Market, CPE/Device, Forecast, and (optionally) Technology, Group, Galileo code, and Committed columns to replace this data — column order doesn't matter and extra columns are ignored.</p></div>
+      <div><h2>Demand forecast</h2><p class="desc">Forecasted vs. committed demand by SKU and market for the current planning period. Upload a CSV or Excel file with Market, CPE/Device, Forecast, and (optionally) Category, Group, Galileo code, and Committed columns to replace this data — column order doesn't matter and extra columns are ignored.</p></div>
       <div style="display:flex;gap:10px;flex:0 0 auto;">
         <button class="btn btn-ghost" id="btn-upload-demand">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 16V4m0 0l-4 4m4-4l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -4382,7 +4152,7 @@ function buildDemandPage() {
 
     <div class="grid kpi-grid" id="demand-kpi-grid">
       ${kpiCard('Forecasted demand', fmtNum(totalForecast) + ' units', 'Q3 2026, all markets')}
-      ${kpiCard('Forecast Accuracy', fmtPct(fulfillment), 'committed vs. forecast', delta(Math.round(fulfillment * 100) - 90, fulfillment >= 0.9))}
+      ${kpiCard('Fulfillment rate', fmtPct(fulfillment), 'committed vs. forecast', delta(Math.round(fulfillment * 100) - 90, fulfillment >= 0.9))}
       ${kpiCard('Unmet demand lines', 'Undefined')}
       ${kpiCard('Opcos covered', 'Undefined')}
     </div>
@@ -4402,15 +4172,14 @@ function buildDemandPage() {
     <div class="filter-row">
       <select id="demand-filter-opco">${optionsHtml(OPCOS, 'All Opcos')}</select>
       <select id="demand-filter-market">${optionsHtml(MARKETS.map(m => m.name), 'All markets')}</select>
-      <select id="demand-filter-category">${optionsHtml(DEMAND_CATEGORIES, 'All technologies')}</select>
-      <select id="demand-filter-group">${optionsHtml(GROUPS, 'All groups')}</select>
+      <select id="demand-filter-category">${optionsHtml(CATEGORIES, 'All categories')}</select>
       <input type="text" class="text-input" id="demand-filter-device" list="demand-device-list" placeholder="All devices — type to search" autocomplete="off" style="min-width:220px;" />
       <datalist id="demand-device-list">${deviceNames.map(n => `<option value="${escapeXml(n)}">`).join('')}</datalist>
     </div>
 
     <div class="card table-card">
       <div class="card-head" style="padding:16px 20px 0;">
-        <div class="card-sub">Full Jan–Dec breakdown for 2026 and 2027 — scroll right for later months. Rolled up by Market; type a device above to roll up by Device (totalled across markets) instead. Click a row to expand it.</div>
+        <div class="card-sub">Full Jan–Dec breakdown for 2026 and 2027 — scroll right for later months.</div>
         <button class="btn btn-ghost" id="demand-export-csv" style="padding:7px 12px;font-size:12px;">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 3v13m0 0l-4.5-4.5M12 16l4.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 18v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           Export CSV
@@ -4420,8 +4189,7 @@ function buildDemandPage() {
       <div class="table-scroll-top" id="demand-scroll-top"><div id="demand-scroll-top-inner"></div></div>
       <div class="table-scroll" id="demand-scroll-main"><table>
         <thead><tr>
-          <th class="dd-chevron-cell"></th>
-          <th>Opco</th><th>Market</th><th>Technology</th><th>Group</th><th>CPE</th><th>Galileo code</th>
+          <th>Opco</th><th>Market</th><th>Category</th><th>Group</th><th>CPE</th><th>Galileo code</th>
           ${MONTH_LABELS.map(m => `<th class="num">${m} '26</th>`).join('')}<th class="num">Total '26</th>
           ${MONTH_LABELS.map(m => `<th class="num">${m} '27</th>`).join('')}<th class="num">Total '27</th>
         </tr></thead>
@@ -4482,114 +4250,41 @@ function buildDemandPage() {
     const opcoSel = document.getElementById('demand-filter-opco').value;
     const marketSel = document.getElementById('demand-filter-market').value;
     const catSel = document.getElementById('demand-filter-category').value;
-    const groupSel = document.getElementById('demand-filter-group').value;
     const deviceQuery = document.getElementById('demand-filter-device').value.trim().toLowerCase();
     return DEMAND.filter(d =>
       (!opcoSel || marketOpco(d.market) === opcoSel) &&
       (!marketSel || marketName(d.market) === marketSel) &&
       (!catSel || d.category === catSel) &&
-      (!groupSel || d.group === groupSel) &&
       (!deviceQuery || d.product.toLowerCase().includes(deviceQuery) || d.galileoCode.toLowerCase().includes(deviceQuery))
     );
   }
 
-  // Persists across re-renders triggered by filter changes within this page
-  // visit (rebuilt from scratch — and reset — each time buildDemandPage runs).
-  const expandedGroups = new Set();
-
-  function monthCellsHtml(m) {
-    return `
-        ${m.y2026.map((v, i) => `<td class="num" style="${PHASE_TD[PHASE_BY_COL_24[i]]}">${fmtNum(v)}</td>`).join('')}
-        <td class="num cell-strong" style="${PHASE_TD.forecast}">${fmtNum(m.total2026)}</td>
-        ${m.y2027.map(v => `<td class="num" style="${PHASE_TD.projection}">${fmtNum(v)}</td>`).join('')}
-        <td class="num cell-strong" style="${PHASE_TD.projection}">${fmtNum(m.total2027)}</td>`;
-  }
-
-  function detailRowHtml(d) {
-    return `<tr class="demand-detail-row">
-        <td></td>
+  function renderRows() {
+    const rows = getFilteredDemandRows();
+    const tbody = document.getElementById('demand-tbody');
+    const colCount = 6 + 13 + 13;
+    if (!rows.length) {
+      tbody.innerHTML = `<tr><td colspan="${colCount}" style="text-align:center;color:var(--text-muted);padding:26px;">No demand lines match these filters.</td></tr>`;
+      return;
+    }
+    tbody.innerHTML = rows.map(d => {
+      const m = monthlySeriesFor(d);
+      return `
+      <tr>
         <td class="cell-strong">${marketOpco(d.market)}</td>
         <td>${marketName(d.market)}</td>
         <td>${d.category}</td>
         <td class="cell-muted">${d.group}</td>
         <td class="cell-strong" style="white-space:normal;max-width:170px;">${d.product}</td>
         <td class="cell-muted">${d.galileoCode}</td>
-        ${monthCellsHtml(monthlySeriesFor(d))}
+        ${m.y2026.map((v, i) => `<td class="num" style="${PHASE_TD[PHASE_BY_COL_24[i]]}">${fmtNum(v)}</td>`).join('')}
+        <td class="num cell-strong" style="${PHASE_TD.forecast}">${fmtNum(m.total2026)}</td>
+        ${m.y2027.map(v => `<td class="num" style="${PHASE_TD.projection}">${fmtNum(v)}</td>`).join('')}
+        <td class="num cell-strong" style="${PHASE_TD.projection}">${fmtNum(m.total2027)}</td>
       </tr>`;
-  }
-
-  // Adaptive rollup: with no device typed, rows roll up by Market (summed
-  // across every device that matches the other filters). Typing a device
-  // flips the table to one row per Device, summed across every market that
-  // still matches — so "All markets" + a device search gives the device's
-  // grand total across markets, per how this table is meant to be read.
-  // Either way, click a row to drill into the rows underneath it.
-  function renderRows() {
-    const rows = getFilteredDemandRows();
-    const tbody = document.getElementById('demand-tbody');
-    const colCount = 1 + 6 + 13 + 13;
-    if (!rows.length) {
-      tbody.innerHTML = `<tr><td colspan="${colCount}" style="text-align:center;color:var(--text-muted);padding:26px;">No demand lines match these filters.</td></tr>`;
-      return;
-    }
-    const deviceQuery = document.getElementById('demand-filter-device').value.trim();
-    const byDevice = !!deviceQuery;
-
-    let groups;
-    if (!byDevice) {
-      const codes = [...new Set(rows.map(r => r.market))];
-      groups = codes.map(code => {
-        const groupRows = rows.filter(r => r.market === code);
-        const distinctTech = [...new Set(groupRows.map(r => r.category))];
-        const deviceCount = new Set(groupRows.map(r => r.product)).size;
-        return {
-          id: 'mk-' + code,
-          rows: groupRows,
-          agg: aggregateMonthlySeries(groupRows),
-          cells: [marketOpco(code), marketName(code), distinctTech.length === 1 ? distinctTech[0] : `${distinctTech.length} technologies`, '—', `${deviceCount} device${deviceCount === 1 ? '' : 's'}`, '—'],
-          strongCols: [0, 1],
-        };
-      });
-    } else {
-      const products = [...new Set(rows.map(r => r.product))];
-      groups = products.map(product => {
-        const groupRows = rows.filter(r => r.product === product);
-        const distinctOpcos = [...new Set(groupRows.map(r => marketOpco(r.market)))];
-        const marketCount = new Set(groupRows.map(r => r.market)).size;
-        const distinctGalileo = [...new Set(groupRows.map(r => r.galileoCode))];
-        return {
-          id: 'dv-' + product,
-          rows: groupRows,
-          agg: aggregateMonthlySeries(groupRows),
-          cells: [distinctOpcos.length === 1 ? distinctOpcos[0] : 'Multiple', `${marketCount} market${marketCount === 1 ? '' : 's'}`, groupRows[0].category, groupRows[0].group, product, distinctGalileo.length === 1 ? distinctGalileo[0] : 'Multiple'],
-          strongCols: [0, 1, 4],
-        };
-      });
-    }
-    // Highest total first — most-in-demand market/device leads.
-    groups.sort((a, b) => (b.agg.total2026 + b.agg.total2027) - (a.agg.total2026 + a.agg.total2027));
-
-    tbody.innerHTML = groups.map(g => {
-      const open = expandedGroups.has(g.id);
-      const cellsHtml = g.cells.map((v, i) => `<td class="${g.strongCols.includes(i) ? 'cell-strong' : 'cell-muted'}"${i === 4 && byDevice ? ' style="white-space:normal;max-width:170px;"' : ''}>${v}</td>`).join('');
-      const groupHtml = `<tr class="demand-group-row dd-row${open ? ' expanded' : ''}" data-group="${g.id}">
-          <td class="dd-chevron-cell"><span class="dd-chevron">▶</span></td>
-          ${cellsHtml}
-          ${monthCellsHtml(g.agg)}
-        </tr>`;
-      const detailHtml = open ? g.rows.map(detailRowHtml).join('') : '';
-      return groupHtml + detailHtml;
     }).join('');
-
-    tbody.querySelectorAll('.demand-group-row').forEach(row => {
-      row.addEventListener('click', () => {
-        const id = row.dataset.group;
-        if (expandedGroups.has(id)) expandedGroups.delete(id); else expandedGroups.add(id);
-        renderRows();
-      });
-    });
   }
-  ['demand-filter-opco', 'demand-filter-market', 'demand-filter-category', 'demand-filter-group'].forEach(id =>
+  ['demand-filter-opco', 'demand-filter-market', 'demand-filter-category'].forEach(id =>
     document.getElementById(id).addEventListener('change', renderRows));
   document.getElementById('demand-filter-device').addEventListener('input', renderRows);
   renderRows();
@@ -4603,7 +4298,7 @@ function buildDemandPage() {
   document.getElementById('demand-export-csv').addEventListener('click', () => {
     const rows = getFilteredDemandRows();
     const header = [
-      'Opco', 'Market', 'Technology', 'Group', 'CPE', 'Galileo code',
+      'Opco', 'Market', 'Category', 'Group', 'CPE', 'Galileo code',
       ...MONTH_LABELS.map(m => `${m} '26`), "Total '26",
       ...MONTH_LABELS.map(m => `${m} '27`), "Total '27",
     ];
@@ -4621,7 +4316,7 @@ function buildDemandPage() {
     const { totalForecast, fulfillment } = computeDemandKpis();
     document.getElementById('demand-kpi-grid').innerHTML = [
       kpiCard('Forecasted demand', fmtNum(totalForecast) + ' units', 'Q3 2026, all markets'),
-      kpiCard('Forecast Accuracy', fmtPct(fulfillment), 'committed vs. forecast', delta(Math.round(fulfillment * 100) - 90, fulfillment >= 0.9)),
+      kpiCard('Fulfillment rate', fmtPct(fulfillment), 'committed vs. forecast', delta(Math.round(fulfillment * 100) - 90, fulfillment >= 0.9)),
       kpiCard('Unmet demand lines', 'Undefined'),
       kpiCard('Opcos covered', 'Undefined'),
     ].join('');
@@ -4705,7 +4400,7 @@ function buildDemandPage() {
 // file doesn't matter, and any columns not listed here are ignored.
 const DEMAND_UPLOAD_COLUMN_ALIASES = {
   market: ['market', 'markets', 'market code', 'marketcode', 'opco market', 'location'],
-  category: ['category', 'device category', 'devicecategory', 'technology'],
+  category: ['category', 'device category', 'devicecategory'],
   group: ['group', 'device group', 'devicegroup'],
   product: ['cpe', 'product', 'device', 'device name', 'devicename', 'sku description', 'description'],
   galileoCode: ['galileo code', 'galileocode', 'galileo'],
@@ -4758,7 +4453,7 @@ function parseDemandRows(json, colMap) {
     if (!Number.isFinite(forecast) || forecast <= 0) { skipped.push(`row ${rowNum}: missing or invalid forecast quantity`); return; }
     let committed = colMap.committed ? toNum(raw[colMap.committed]) : NaN;
     if (!Number.isFinite(committed) || committed < 0) committed = forecast;
-    const category = (colMap.category && String(raw[colMap.category]).trim()) || 'Connectivity FTTH';
+    const category = (colMap.category && String(raw[colMap.category]).trim()) || 'Unclassified';
     const group = (colMap.group && String(raw[colMap.group]).trim()) || 'Uncategorized';
     const galileoCode = colMap.galileoCode ? String(raw[colMap.galileoCode]).trim() : '';
     const sku = (colMap.sku && String(raw[colMap.sku]).trim()) || `UPL-${String(rows.length + 1).padStart(4, '0')}`;
@@ -4796,7 +4491,7 @@ function nowAbsMonth() {
 function buildNewDemandPage() {
   document.getElementById('page-new-demand').innerHTML = `
     <div class="page-head">
-      <div><h2>New demand line</h2><p class="desc">Pick Opco, market, technology, group and device to populate this line's monthly quantities — only the current month onward can be edited.</p></div>
+      <div><h2>New demand line</h2><p class="desc">Pick Opco, market, category, group and device to populate this line's monthly quantities — only the current month onward can be edited.</p></div>
       <button class="btn btn-ghost" id="nd-cancel">Cancel</button>
     </div>
 
@@ -4810,7 +4505,7 @@ function buildNewDemandPage() {
         <div class="form-grid">
           <div class="form-field"><label>Opco</label><select id="nd-opco">${optionsHtml(OPCOS, 'Select Opco')}</select></div>
           <div class="form-field"><label>Market</label><select id="nd-market">${optionsHtml(MARKETS.map(m => m.name), 'Select market')}</select></div>
-          <div class="form-field"><label>Technology</label><select id="nd-category">${optionsHtml(DEMAND_CATEGORIES, 'Select technology')}</select></div>
+          <div class="form-field"><label>Category</label><select id="nd-category">${optionsHtml(CATEGORIES, 'Select category')}</select></div>
           <div class="form-field"><label>Group</label><select id="nd-group">${optionsHtml(GROUPS, 'Select group')}</select></div>
           <div class="form-field"><label>Device</label><select id="nd-device">${optionsHtml(ROLLFORWARD_DEVICES, 'Select device')}</select></div>
         </div>
@@ -4879,30 +4574,11 @@ function buildNewDemandPage() {
 /* ======================================================================
    PAGE: PURCHASE ORDERS
    ====================================================================== */
-// A PO's lifecycle stage isn't in the source file (every real row's status
-// is literally "Open"), so it's derived from order date vs. ETA relative to
-// TODAY: no firm ETA yet (or due 30+ days out) reads as just Placed; due
-// within 30 days reads as In Transit; an ETA already in the past reads as
-// (presumed) Received. This is a separate lens from the Overview page's
-// "Overdue" KPI, which flags any PO past its original ETA as a timeliness
-// signal regardless of stage — the two are not meant to be mutually exclusive.
-function poStage(p) {
-  if (!p.eta || p.eta === 'TBC') return 'Placed';
-  const d = new Date(p.eta);
-  if (isNaN(d)) return 'Placed';
-  const daysOut = Math.round((d - TODAY) / 86400000);
-  if (daysOut < 0) return 'Received';
-  if (daysOut <= 30) return 'In Transit';
-  return 'Placed';
-}
-
 function buildPOPage() {
   const totalOrders = PURCHASE_ORDERS.length;
-  const externalCount = PURCHASE_ORDERS.filter(p => p.orderType === 'New Purchase').length;
-  const intraCoCount = PURCHASE_ORDERS.filter(p => p.orderType === 'Intra Company Transfer').length;
-  const placedCount = PURCHASE_ORDERS.filter(p => poStage(p) === 'Placed').length;
-  const transitCount = PURCHASE_ORDERS.filter(p => poStage(p) === 'In Transit').length;
-  const receivedCount = PURCHASE_ORDERS.filter(p => poStage(p) === 'Received').length;
+  const totalQuantity = PURCHASE_ORDERS.reduce((s, p) => s + p.qty, 0);
+  const vendorCount = new Set(PURCHASE_ORDERS.map(p => p.supplier)).size;
+  const deviceCount = new Set(PURCHASE_ORDERS.map(p => p.product)).size;
 
   document.getElementById('page-pos').innerHTML = `
     <div class="page-head">
@@ -4910,10 +4586,10 @@ function buildPOPage() {
     </div>
 
     <div class="grid kpi-grid">
-      ${kpiCard('Total Orders', fmtNum(totalOrders), `${fmtNum(externalCount)} External Order, ${fmtNum(intraCoCount)} Intra Company Transfer`)}
-      ${kpiCard('PO Placed', fmtNum(placedCount), 'no firm ETA yet, or due in 30+ days')}
-      ${kpiCard('PO in Transit', fmtNum(transitCount), 'due within the next 30 days')}
-      ${kpiCard('PO Received', fmtNum(receivedCount), 'past original ETA — presumed received')}
+      ${kpiCard('Total orders', fmtNum(totalOrders), 'open orders in the source file')}
+      ${kpiCard('Total quantity', fmtNum(totalQuantity), 'units on order')}
+      ${kpiCard('Vendors', fmtNum(vendorCount), 'distinct suppliers')}
+      ${kpiCard('Devices', fmtNum(deviceCount), 'distinct device lines')}
     </div>
 
     <div class="filter-row">
@@ -5169,6 +4845,7 @@ function buildPOPage() {
 function buildInventoryPage() {
   const totalUnits = INVENTORY_STOCK.reduce((s, i) => s + i.onHand, 0);
   const totalDemandUnits = DEMAND.reduce((s, d) => s + d.forecast, 0);
+  const totalValue = INVENTORY_STOCK.reduce((s, i) => s + i.value, 0);
   const stockMarketCount = new Set(INVENTORY_STOCK.map(i => i.market)).size;
 
   document.getElementById('page-inventory').innerHTML = `
@@ -5206,7 +4883,7 @@ function buildInventoryPage() {
     <div class="card table-card">
       <div class="table-scroll-top" id="inv-scroll-top"><div id="inv-scroll-top-inner"></div></div>
       <div class="table-scroll" id="inv-scroll-main"><table>
-        <thead><tr><th>Product</th><th>Market</th><th class="num">Lead time</th><th class="num">On hand</th><th>Stock level (Jan&ndash;Jun &lsquo;26)</th><th>Status</th></tr></thead>
+        <thead><tr><th>Product</th><th>Market</th><th class="num">On hand</th><th>Stock level (Jan&ndash;Jun &lsquo;26)</th><th class="num">Value</th><th>Status</th></tr></thead>
         <tbody id="inv-tbody"></tbody>
       </table></div>
     </div>
@@ -5258,11 +4935,11 @@ function buildInventoryPage() {
       <tr>
         <td class="cell-strong">${i.product}<div class="cell-sub">${i.category}</div></td>
         <td>${marketName(i.market)}</td>
-        <td class="num cell-muted">${fmtNum(i.leadTimeDays)} days</td>
         <td class="num">${fmtNum(i.onHand)}</td>
         <td style="min-width:120px;">
           ${monthlySparklineSvg(i.monthly, INV_SPARKLINE_MONTHS, C.s1)}
         </td>
+        <td class="num">${fmtMoney(i.value)}</td>
         <td>${stockRagBadge(i.status)}</td>
       </tr>`;
     }).join('') : `<tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:26px;">No stock lines match these filters.</td></tr>`;
@@ -5278,8 +4955,6 @@ function buildInventoryPage() {
    ====================================================================== */
 function buildPlanPage() {
   const selectedDevices = new Set(); // devices currently checked in the multi-select
-  const rfExpandedGroups = new Set(); // "<idSuffix>|<groupId>" keys currently expanded
-  const recDecisions = new Map(); // "<idSuffix>|po|shipment|refurb" -> 'accepted' | 'rejected'
 
   document.getElementById('page-plan').innerHTML = `
     <div class="page-head">
@@ -5328,16 +5003,6 @@ function buildPlanPage() {
         </div>
       </div>
       <div id="rf-table-wrap" style="padding:14px 20px 20px;"></div>
-    </div>
-
-    <div class="card" style="margin-top:20px;">
-      <div class="card-head" style="padding:16px 20px 0;align-items:flex-start;">
-        <div>
-          <div class="card-title">Recommended actions</div>
-          <div class="card-sub">Suggested purchase orders and internal shipments for the current planning month, generated from the rollforward above. Accept or reject each — decisions are tracked for this session only, nothing is submitted to a supplier or warehouse.</div>
-        </div>
-      </div>
-      <div id="rf-rec-wrap" style="padding:14px 20px 20px;"></div>
     </div>
   `;
 
@@ -5391,12 +5056,10 @@ function buildPlanPage() {
     const market = document.getElementById('rf-filter-market').value;
     const devices = [...selectedDevices];
     const wrap = document.getElementById('rf-table-wrap');
-    const recWrap = document.getElementById('rf-rec-wrap');
     if (!opco || !market || !devices.length) {
       exportBtn.disabled = true;
       snapshotBtn.disabled = true;
       wrap.innerHTML = `<div style="text-align:center;color:var(--text-muted);padding:26px;border:1px dashed var(--border-strong);border-radius:10px;">Select an Opco, market, and at least one device above to view the rollforward.</div>`;
-      recWrap.innerHTML = `<div style="text-align:center;color:var(--text-muted);padding:26px;border:1px dashed var(--border-strong);border-radius:10px;">Select an Opco, market, and at least one device above to see recommended actions.</div>`;
       return;
     }
     exportBtn.disabled = false;
@@ -5404,104 +5067,9 @@ function buildPlanPage() {
     wrap.innerHTML = devices.map((device, i) => `
       <div class="rf-device-block"${i > 0 ? ' style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border);"' : ''}>
         ${devices.length > 1 ? `<div class="rf-device-title">${escapeXml(device)}</div>` : ''}
-        ${rollforwardTableHtml(buildRollforward(opco, market, device), '-' + i, rfExpandedGroups)}
+        ${rollforwardTableHtml(buildRollforward(opco, market, device), '-' + i)}
       </div>`).join('');
     devices.forEach((device, i) => wireTopScrollbar(`rf-scroll-top-${i}`, `rf-scroll-top-inner-${i}`, `rf-scroll-main-${i}`));
-    wrap.querySelectorAll('.rf-toggle-row').forEach(row => {
-      row.addEventListener('click', () => {
-        const suffixEl = row.closest('.table-scroll');
-        const suffixMatch = suffixEl && suffixEl.id.match(/-(\d+)$/);
-        const suffix = suffixMatch ? '-' + suffixMatch[1] : '';
-        const key = `${suffix}|${row.dataset.group}`;
-        if (rfExpandedGroups.has(key)) rfExpandedGroups.delete(key); else rfExpandedGroups.add(key);
-        renderRollforward();
-      });
-    });
-    renderRfRecommendations(opco, market, devices);
-  }
-
-  function recActionButtonsHtml(key) {
-    const decision = recDecisions.get(key);
-    if (decision === 'accepted') {
-      return `<span class="rf-rec-decision rf-rec-decision-accepted">✓ Accepted</span><button type="button" class="btn btn-ghost rf-rec-undo" data-key="${key}" style="padding:4px 9px;font-size:11px;">Undo</button>`;
-    }
-    if (decision === 'rejected') {
-      return `<span class="rf-rec-decision rf-rec-decision-rejected">✕ Rejected</span><button type="button" class="btn btn-ghost rf-rec-undo" data-key="${key}" style="padding:4px 9px;font-size:11px;">Undo</button>`;
-    }
-    return `<button type="button" class="btn btn-primary rf-rec-decide" data-key="${key}" data-decision="accepted" style="padding:6px 14px;font-size:12px;">Accept</button>
-      <button type="button" class="btn btn-ghost rf-rec-decide" data-key="${key}" data-decision="rejected" style="padding:6px 14px;font-size:12px;">Reject</button>`;
-  }
-
-  function renderRfRecommendations(opco, market, devices) {
-    const recWrap = document.getElementById('rf-rec-wrap');
-    recWrap.innerHTML = devices.map((device, i) => {
-      const suffix = '-' + i;
-      const R = buildRollforward(opco, market, device);
-      const d = rollforwardRecommendationDetails(opco, market, device, R);
-      const cards = [];
-
-      if (d.po.qty > 0) {
-        const key = `${suffix}|po`;
-        cards.push(`
-          <div class="rf-rec-card">
-            <div class="rf-rec-card-head">
-              <span class="rf-rec-badge rf-rec-badge-po">Purchase Order</span>
-              <span class="rf-rec-qty">${fmtNum(d.po.qty)} units</span>
-            </div>
-            <div class="rf-rec-detail">Raise a purchase order for <strong>${fmtNum(d.po.qty)} units</strong> of ${escapeXml(device)} for ${escapeXml(market)}, sourced from <strong>${escapeXml(d.po.vendor)}</strong>.</div>
-            <div class="rf-rec-meta">PO ref ${d.po.poRef} &middot; Lead time ${d.po.leadDays} days &middot; Unit cost ${fmtMoney(d.po.unitCost)} &middot; Est. total ${fmtMoney(d.po.totalCost)}</div>
-            <div class="rf-rec-actions">${recActionButtonsHtml(key)}</div>
-          </div>`);
-      }
-
-      if (d.shipment.qty > 0 && d.shipment.fromMarket) {
-        const key = `${suffix}|shipment`;
-        cards.push(`
-          <div class="rf-rec-card">
-            <div class="rf-rec-card-head">
-              <span class="rf-rec-badge rf-rec-badge-ship">Internal Shipment</span>
-              <span class="rf-rec-qty">${fmtNum(d.shipment.qty)} units</span>
-            </div>
-            <div class="rf-rec-detail">Ship <strong>${fmtNum(d.shipment.qty)} units</strong> of ${escapeXml(device)} from <strong>${escapeXml(d.shipment.fromMarket)}</strong> (${escapeXml(d.shipment.fromOpco)}) to ${escapeXml(market)}.</div>
-            <div class="rf-rec-meta">Transfer lead time ${d.shipment.leadDays} days &middot; Est. transfer cost ${fmtMoney(d.shipment.cost)}</div>
-            <div class="rf-rec-actions">${recActionButtonsHtml(key)}</div>
-          </div>`);
-      }
-
-      if (d.refurb.qty > 0) {
-        const key = `${suffix}|refurb`;
-        cards.push(`
-          <div class="rf-rec-card">
-            <div class="rf-rec-card-head">
-              <span class="rf-rec-badge rf-rec-badge-refurb">Refurbishment</span>
-              <span class="rf-rec-qty">${fmtNum(d.refurb.qty)} units</span>
-            </div>
-            <div class="rf-rec-detail">Route <strong>${fmtNum(d.refurb.qty)} units</strong> of ${escapeXml(device)} through refurbishment for ${escapeXml(market)} instead of new procurement.</div>
-            <div class="rf-rec-actions">${recActionButtonsHtml(key)}</div>
-          </div>`);
-      }
-
-      return `
-        <div class="rf-rec-device-block"${i > 0 ? ' style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border);"' : ''}>
-          ${devices.length > 1 ? `<div class="rf-device-title">${escapeXml(device)}</div>` : ''}
-          ${cards.length
-            ? `<div class="rf-rec-grid">${cards.join('')}</div>`
-            : `<div style="text-align:center;color:var(--text-muted);padding:20px;">No recommended actions for ${escapeXml(device)} this month.</div>`}
-        </div>`;
-    }).join('');
-
-    recWrap.querySelectorAll('.rf-rec-decide').forEach(btn => {
-      btn.addEventListener('click', () => {
-        recDecisions.set(btn.dataset.key, btn.dataset.decision);
-        renderRfRecommendations(opco, market, devices);
-      });
-    });
-    recWrap.querySelectorAll('.rf-rec-undo').forEach(btn => {
-      btn.addEventListener('click', () => {
-        recDecisions.delete(btn.dataset.key);
-        renderRfRecommendations(opco, market, devices);
-      });
-    });
   }
 
   exportBtn.addEventListener('click', () => {
@@ -6176,7 +5744,6 @@ function buildDeviceDetailsPage() {
       fulfilmentDays: 150,
       inventoryMonths: invMatch ? invMatch.inventoryMonths : 2,
       active: true,
-      price: 0,
     };
     DEVICE_DETAIL_RECORDS.push(rec);
     DEVICE_DETAIL_BY_ID.set(rec.id, rec);
@@ -6212,7 +5779,7 @@ function buildDeviceDetailsPage() {
     const sortedRecords = [...records].sort((a, b) => a.vendor.localeCompare(b.vendor) || marketName(a.market).localeCompare(marketName(b.market)));
     const fulfilmentTable = sortedRecords.length ? `
       <table class="dd-expand-table"><thead><tr>
-        <th>OpCo</th><th>Vendor ID</th><th>Annex Item ID</th><th>Market</th><th class="num">Lead time (days)</th><th class="num">Price ($)</th>
+        <th>OpCo</th><th>Vendor ID</th><th>Annex Item ID</th><th>Market</th><th class="num">Lead time (days)</th>
       </tr></thead><tbody>
         ${sortedRecords.map(r => `
           <tr>
@@ -6221,7 +5788,6 @@ function buildDeviceDetailsPage() {
             <td><input type="text" class="cell-input dd-input" data-id="${r.id}" data-field="annexItemCode" value="${escapeXml(r.annexItemCode)}" /></td>
             <td><select class="cell-input dd-input dd-market-select" data-id="${r.id}" data-field="market">${MARKETS.map(m => `<option value="${m.code}" ${m.code === r.market ? 'selected' : ''}>${escapeXml(m.name)}</option>`).join('')}</select></td>
             <td class="num"><input type="number" min="0" class="qty-input dd-input" data-id="${r.id}" data-field="fulfilmentDays" value="${r.fulfilmentDays}" /></td>
-            <td class="num"><input type="number" min="0" step="0.01" class="qty-input dd-input" data-id="${r.id}" data-field="price" value="${r.price != null ? r.price : ''}" /></td>
           </tr>`).join('')}
       </tbody></table>` : `<div class="dd-subempty">No vendors yet.</div>`;
 
@@ -6296,7 +5862,7 @@ function buildDeviceDetailsPage() {
       const applyEdit = () => {
         const ids = (el.dataset.ids || el.dataset.id).split(',').map(Number);
         const value = el.type === 'checkbox' ? el.checked
-          : (field === 'inventoryMonths' || field === 'fulfilmentDays' || field === 'price') ? (Number(el.value) || 0) : el.value;
+          : (field === 'inventoryMonths' || field === 'fulfilmentDays') ? (Number(el.value) || 0) : el.value;
         ids.forEach(id => { const rec = DEVICE_DETAIL_BY_ID.get(id); if (rec) rec[field] = value; });
         markDirty(ids);
       };
