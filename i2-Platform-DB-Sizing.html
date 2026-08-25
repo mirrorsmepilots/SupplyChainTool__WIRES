@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>i2 Platform — Database Sizing</title>
+<style>
+:root {
+  --paper:#FAF8F7; --panel:#FFFFFF; --panel-alt:#F4EFEE;
+  --ink:#191416; --ink-soft:#423A3C; --muted:#6F6467;
+  --rule:#E4DBDA; --rule-firm:#CFC3C2;
+  --accent:#B01324; --accent-dim:#F5E6E7;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua","URW Palladio L",Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono","SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141011; --panel:#1C1718; --panel-alt:#241D1F;
+    --ink:#EFE8E7; --ink-soft:#CFC4C4; --muted:#A29497;
+    --rule:#302729; --rule-firm:#453839;
+    --accent:#F1626C; --accent-dim:#38191D;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+     font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.shell{max-width:900px;margin:0 auto;padding:0 28px 100px}
+.masthead{border-bottom:2px solid var(--ink);padding:48px 0 24px;margin-bottom:36px}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+         color:var(--accent);margin:0 0 12px}
+.masthead h1{font-family:var(--serif);font-size:clamp(28px,4.5vw,40px);line-height:1.1;font-weight:600;
+             letter-spacing:-.01em;margin:0}
+section{margin-bottom:44px}
+h2{font-family:var(--serif);font-size:24px;font-weight:600;margin:0 0 16px;padding-top:20px;
+   border-top:1px solid var(--rule-firm)}
+p{max-width:70ch}
+.tw{overflow-x:auto;margin:0 0 20px;border:1px solid var(--rule);border-radius:3px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:15px}
+caption{caption-side:top;text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
+        text-transform:uppercase;color:var(--muted);padding:12px 16px 10px;border-bottom:1px solid var(--rule)}
+th,td{padding:11px 16px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule);line-height:1.55}
+thead th{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:700;
+         background:var(--panel-alt);white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td.mono{font-family:var(--mono);font-size:13.5px;white-space:nowrap}
+td.num{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:14px}
+th.num{text-align:right}
+code{font-family:var(--mono);font-size:.87em;background:var(--panel-alt);padding:1px 5px;
+     border-radius:3px;border:1px solid var(--rule)}
+.footer{border-top:2px solid var(--ink);padding-top:18px;margin-top:16px;font-size:12.5px;
+        color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <header class="masthead">
+    <p class="eyebrow">Project SC-AI-01 · Database Sizing</p>
+    <h1>i2 Platform — database sizing requirements</h1>
+  </header>
+
+  <section>
+    <h2>1 · Deployment path</h2>
+    <div class="tw">
+      <table>
+        <caption>Approach</caption>
+        <tbody>
+          <tr><td>The client's AWS account runs PostgreSQL on self-managed compute, not RDS.</td></tr>
+          <tr><td><strong>Amazon EKS + the CloudNativePG operator</strong> (recommended) — an open-source
+              Kubernetes operator for PostgreSQL. This is how i2's own staging and production environments run
+              today. It handles replication, failover, connection pooling and backups declaratively.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>2 · Compute sizing</h2>
+    <div class="tw">
+      <table>
+        <caption>Per node — resource requests and limits</caption>
+        <thead><tr><th>Resource</th><th class="num">Baseline (request)</th><th class="num">Burst (limit)</th></tr></thead>
+        <tbody>
+          <tr><td>vCPU per node</td><td class="num">2</td><td class="num">4</td></tr>
+          <tr><td>Memory per node</td><td class="num">4 GB</td><td class="num">8 GB</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Applies to each of the two nodes (primary + replica). Total provisioned capacity across the pair is
+      4 vCPU / 8 GB at baseline, up to 8 vCPU / 16 GB at burst.</p>
+
+    <div class="tw">
+      <table>
+        <caption>Suggested AWS instance types</caption>
+        <thead><tr><th>Deployment path</th><th>Instance type</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>EKS worker node</td>
+              <td class="mono">r6g.large (2 vCPU / 16 GB) or m6g.xlarge (4 vCPU / 16 GB)</td>
+              <td>Memory-optimized preferred — PostgreSQL benefits from OS page cache headroom above the
+                  8 GB container limit.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>3 · Storage sizing</h2>
+    <div class="tw">
+      <table>
+        <caption>Per node</caption>
+        <thead><tr><th>Setting</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Volume size</td><td class="mono">100 GB</td></tr>
+          <tr><td>Volume type</td><td>gp3 (General Purpose SSD)</td></tr>
+          <tr><td>Baseline IOPS</td><td class="mono">3,000 (gp3 default)</td></tr>
+          <tr><td>Baseline throughput</td><td class="mono">125 MB/s (gp3 default)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>4 · Backups</h2>
+    <div class="tw">
+      <table>
+        <tbody>
+          <tr><td>Backup retention</td><td>Daily, 7-day retention</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>5 · Core PostgreSQL configuration</h2>
+    <p>Tuned for the 4 GB / 8 GB memory envelope above. Provide these to whoever provisions the instance so
+      the database is tuned correctly out of the gate.</p>
+    <div class="tw">
+      <table>
+        <caption>Parameters</caption>
+        <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">shared_buffers</td><td class="mono">1 GB</td></tr>
+          <tr><td class="mono">effective_cache_size</td><td class="mono">3 GB</td></tr>
+          <tr><td class="mono">work_mem</td><td class="mono">64 MB</td></tr>
+          <tr><td class="mono">maintenance_work_mem</td><td class="mono">512 MB</td></tr>
+          <tr><td class="mono">max_wal_size</td><td class="mono">2 GB</td></tr>
+          <tr><td class="mono">wal_buffers</td><td class="mono">64 MB</td></tr>
+          <tr><td class="mono">max_parallel_workers</td><td class="mono">4</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="footer">
+    <span>i2 Platform · Database Sizing</span>
+    <span>Liberty Latin America · Confidential</span>
+  </div>
+
+</div>
+</body>
+</html>
