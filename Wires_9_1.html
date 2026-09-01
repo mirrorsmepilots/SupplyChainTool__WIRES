@@ -2394,6 +2394,10 @@ const TRR_ROWS = [
   { type: 'data', label: 'Total undeployable stock end of month', def: 'Pending to be tested', key: 'endUndeployable', fmt: 'num', bold: true, shaded: true, indent: true, group: 'trr' },
   { type: 'data', label: 'Deployed Base Begin of the month', key: 'deployedBaseBegin', fmt: 'num' },
   { type: 'data', label: 'Deployed Base End of the month', key: 'deployedBaseEnd', fmt: 'num', bold: true },
+  { type: 'data', label: 'Total to be sent for major repairs - 3rd party Begin of month', key: 'majorRepairPoolBegin', fmt: 'num' },
+  { type: 'data', label: 'Total to be sent for major repairs - 3rd party End of month', key: 'majorRepairPoolEnd', fmt: 'num', bold: true },
+  { type: 'data', label: 'Total for sell to 3rd party / Scrap Begin of month', key: 'scrapPoolBegin', fmt: 'num' },
+  { type: 'data', label: 'Total for sell to 3rd party / Scrap End of month', key: 'scrapPoolEnd', fmt: 'num', bold: true },
 ];
 
 const ROLLFORWARD_ROWS = [
@@ -4982,7 +4986,6 @@ function buildTrrPage() {
           </div>
         </div>
       </div>
-      <div class="grid kpi-grid" id="trr-kpi-grid" style="padding:14px 20px 0;grid-template-columns:repeat(2, 1fr);"></div>
       <div id="trr-table-wrap" style="padding:14px 20px 20px;"></div>
     </div>
   `;
@@ -5037,48 +5040,18 @@ function buildTrrPage() {
     const market = document.getElementById('trr-filter-market').value;
     const devices = [...selectedDevices];
     const wrap = document.getElementById('trr-table-wrap');
-    const kpiGrid = document.getElementById('trr-kpi-grid');
     if (!opco || !market || !devices.length) {
       exportBtn.disabled = true;
       snapshotBtn.disabled = true;
-      kpiGrid.innerHTML = '';
       wrap.innerHTML = `<div style="text-align:center;color:var(--text-muted);padding:26px;border:1px dashed var(--border-strong);border-radius:10px;">Select an Opco, market, and at least one device above to view the TRR rollforward.</div>`;
       return;
     }
     exportBtn.disabled = false;
     snapshotBtn.disabled = false;
-    const rollforwards = devices.map(device => buildTrrRollforward(opco, market, device));
-
-    // Forecast vs. Actuals: units collected in already-elapsed 2026 months
-    // ("Actual") vs. the remaining 2026 months ("Forecast") — same actual/
-    // forecast split already shown on the table itself (see PHASE_BY_COL_24).
-    // Asking vs. Delivery: volume sent to refurbishment ("Asking") vs.
-    // devices that came back ready for deployment ("Delivery"), summed
-    // across the full Jan '26–Dec '27 window shown in the table.
-    let actualCollected = 0, forecastCollected = 0, askingTotal = 0, deliveryTotal = 0;
-    rollforwards.forEach(R => {
-      R.subtotalCollected.forEach((v, i) => {
-        if (PHASE_BY_COL_24[i] === 'actual') actualCollected += v;
-        else if (PHASE_BY_COL_24[i] === 'forecast') forecastCollected += v;
-      });
-      askingTotal += R.volSentRefurb.reduce((s, v) => s + v, 0);
-      deliveryTotal += R.deviceReady.reduce((s, v) => s + v, 0);
-    });
-    const collectDeltaPct = forecastCollected > 0 ? Math.round((actualCollected - forecastCollected) / forecastCollected * 100) : null;
-    kpiGrid.innerHTML = [
-      kpiCard('Forecast vs. Actuals',
-        `${fmtNum(actualCollected)} <span style="color:var(--text-muted);font-weight:500;">/</span> ${fmtNum(forecastCollected)}`,
-        `Actual${ACTUAL_RANGE_LABEL ? ' (' + ACTUAL_RANGE_LABEL + ')' : ''} / Forecast (${FORECAST_RANGE_LABEL}) — units collected`,
-        collectDeltaPct === null ? '' : delta(collectDeltaPct, collectDeltaPct >= 0)),
-      kpiCard('Asking vs. Delivery',
-        `${fmtNum(askingTotal)} <span style="color:var(--text-muted);font-weight:500;">/</span> ${fmtNum(deliveryTotal)}`,
-        `Sent to refurbishment / ready for deployment — Jan '26–Dec '27${askingTotal > 0 ? ` (${fmtPct(deliveryTotal / askingTotal)} pass-through)` : ''}`),
-    ].join('');
-
     wrap.innerHTML = devices.map((device, i) => `
       <div class="rf-device-block"${i > 0 ? ' style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border);"' : ''}>
         ${devices.length > 1 ? `<div class="rf-device-title">${escapeXml(device)}</div>` : ''}
-        ${rollforwardTableHtml(rollforwards[i], '-' + i, trrExpandedGroups, TRR_ROWS, 'trr')}
+        ${rollforwardTableHtml(buildTrrRollforward(opco, market, device), '-' + i, trrExpandedGroups, TRR_ROWS, 'trr')}
       </div>`).join('');
     devices.forEach((device, i) => wireTopScrollbar(`trr-scroll-top-${i}`, `trr-scroll-top-inner-${i}`, `trr-scroll-main-${i}`));
     wrap.querySelectorAll('.rf-toggle-row').forEach(row => {
